@@ -1,0 +1,50 @@
+extends layout
+
+mixin bannerList(item)
+	//- BEGIN SLIDE
+	.swiper-slide.fit.bg-info
+		//- BEGIN IMAGE PARRALAX
+		.slider-wrapper
+			.background-wrapper(data-swiper-parallax='20%')
+				//- YOUR BACKGROUND IMAGE HERE, YOU CAN ALSO USE IMG with the same classes
+				.background(data-pages-bg-image=item.picURL.url, data-bg-overlay='black', data-overlay-opacity='0.4' draggable='false')
+		//- END IMAGE PARRALAX
+		//- BEGIN CONTENT
+		.content-layer
+			.inner.full-height
+				.container-xs-height.full-height
+					.col-xs-height.col-middle.text-left
+						.container.text-center
+							.row
+								h1.light.text-white(data-pages-animation='standard', data-delay='1100', data-type='transition.slideDownIn')
+									| #{item.title}
+									br
+									span.fs-16.font-montserrat.text-uppercase(data-pages-init='text-rotate', data-speed='2000', data-animation='fade') YSraccoon
+		.bottom-left.p-l-70.p-b-50.sm-p-l-20.sm-p-b-20(data-pages-animation='standard', data-delay='1600', data-type='transition.slideUpIn')
+			h6.block-title.text-master-light.text-left
+				| Description
+			h6.block-title.small-text.fs-14.text-white.hint-text.text-right.m-b-0.m-r-10
+				span #{item.description}
+		.bottom-right.p-r-70.p-b-50.sm-p-r-20.sm-p-b-20(data-pages-animation='standard', data-delay='1600', data-type='transition.slideUpIn')
+			h6.block-title.small-text.fs-14.text-white.hint-text.text-right.m-b-0.m-r-10
+				| Date: #{moment(item.addDate).format('MM-DD-YYYY')}
+			h6.block-title.small-text.fs-14.text-white.hint-text.text-right.m-b-0.m-r-10
+				| Location: #{item.location}
+		//- END CONTENT
+	//- END SLIDE
+
+block content
+	//- BEGIN JUMBOTRON
+	section.jumbotron.full-height(data-pages='parallax')
+		.inner.full-height
+			//- BEGIN SLIDER
+			#hero.swiper-container
+				.swiper-wrapper
+					if context.length
+						each item in context
+							+bannerList(item)
+				//- Add Navigation
+				.swiper-navigation.swiper-white-solid.swiper-button-prev.auto-reveal
+				.swiper-navigation.swiper-white-solid.swiper-button-next.auto-reveal
+			//- END SLIDER
+	//- END JUMBOTRON

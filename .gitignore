@@ -1,0 +1,6 @@
+#ignore packages installed by npm
+node_modules
+#others
+.DS_STore
+*.bak
+ys.*

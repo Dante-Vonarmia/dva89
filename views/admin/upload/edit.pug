@@ -1,0 +1,101 @@
+extends ../admin-layout
+
+block content
+	//- BEGIN BREADCRUMb
+	section.bg-master-lightest.p-t-15
+		.container
+			.row
+				ol.breadcrumb.m-b-0.bg-master-lightest
+					li.breadcrumb-item
+						a(href='/admin/upload/add').semi-bold.text-primary 
+							i.pg-arrow_left_line_alt.m-r-5
+							| Back
+	section.p-t-15.p-b-65.bg-master-lightest
+		.container
+			//- START PAGE CONTENT
+			.content
+				//- START CONTAINER FLUID
+				.container-fluid.container-fixed-lg.bg-white
+					//- START PANEL
+					.panel.panel-transparent
+						.panel-heading
+							.panel-title
+								| Edit Photo
+							.clearfix
+						.panel-body
+							//- START FORM
+							form(role='form', autocomplete='off', enctype='multipart/form-data', method='post')
+								if context.length
+									.row.p-t-30
+										.col-md-4.col-sm-6
+											.row
+												.col-sm-12
+													.form-group.form-group-default
+														label(for='pos') Image Preview
+														img.m-t-10.m-b-10.background.full-width(src=context[0].picURL.url, data-bg-overlay='black', data-overlay-opacity='0.4' draggable='false', height='100%')
+										.col-md-8.col-sm-6
+											.row
+												.col-sm-12
+													.form-group.form-group-default
+														label(for='title') title
+														input#title.form-control(type='text', placeholder='Name of your title', name='title', value=context[0].title)
+											p.small-text Description
+											.row
+												.col-sm-6
+													.form-group.form-group-default
+														label(for='brief') Brief
+														input#brief.form-control(type='text', placeholder='Tell us more about it', name='brief', value=context[0].description.brief)
+													
+													.form-group.form-group-default
+														label(for='camera') Camera
+														input#camera.form-control(type='text', placeholder='eq: Canon PowerShot S95', name='camera', value=context[0].description.camera)
+													
+													.form-group.form-group-default
+														label(for='focal_length') Focal_length
+														input#focal_length.form-control(type='text', placeholder='eq: 22.5mm', name='focal_length', value=context[0].description.focal_length)
+												.col-sm-6
+													.form-group.form-group-default
+														label(for='aperture') Aperture
+														input#aperture.form-control(type='text', placeholder='eq: ƒ/5.6', name='aperture', value=context[0].description.aperture)
+													
+													.form-group.form-group-default
+														label(for='exposure_time') Exposure_time
+														input#exposure_time.form-control(type='text', placeholder='eq: 1/1000', name='exposure_time', value=context[0].description.exposure_time)
+													
+													.form-group.form-group-default
+														label(for='iso') Iso
+														input#iso.form-control(type='text', placeholder='eq: 80', name='iso', value=context[0].description.iso)
+											.row
+												.col-sm-12
+													.form-group.form-group-default
+														label(for='picURL') Upload Image
+														input#picURL.form-control(type='file', placeholder='Tell us more about it', name='picURL', value=context[0].picURL)
+											.row
+												.col-sm-4
+													.form-group.form-group-default
+														label(for='album') Choose Album
+														select#album(name='album')
+															if chooseAlbum.length
+																each item in chooseAlbum
+																	if (context[0].album.title === item.title)
+																		option(value=item, selected)= item.title
+																	else 
+																		option(value=item)= item.title
+												.col-sm-4
+													.form-group.form-group-default
+														.checkbox.check-primary.checkbox-circle
+															input#heroImg(type='checkbox', checked=context[0].heroImg, name="heroImg", onchange='this.value = this.checked;' value=context[0].heroImg)
+															label(for='heroImg') Hero Image	
+												.col-sm-4
+													.form-group.form-group-default
+														.checkbox.check-primary.checkbox-circle
+															input#onPublic(type='checkbox', checked=context[0].onPublic, name="onPublic", onchange='this.value = this.checked;' value=context[0].onPublic)
+															label(for='onPublic') On Public
+											.row
+												.col-md-12.col-sm-3
+													button.btn.btn-primary.btn-md
+														| Update
+
+					//- END PANEL
+block scripts
+	script.

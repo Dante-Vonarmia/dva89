@@ -1,0 +1,90 @@
+extends admin-layout
+
+block content
+	//- BEGIN HERO WITH PARALLAX
+	section.demo-hero-5(data-pages='parallax', data-pages-bg-image='/front/assets/images/gallery_hero_1.jpg')
+		.container-xs-height.full-height
+			.col-xs-height.col-middle.text-center
+				h1.text-white.inner #{user} 
+					br
+					| Content Management System
+	//- END HERO WITH PARALLAX
+
+
+	//- BEGIN CONTENT SECTION
+	section.p-b-65.p-t-65.bg-master-lightest
+		.container
+			.md-p-l-20.xs-no-padding.clearfix
+				.col-sm-6.col-md-3.no-padding
+					.p-r-40.md-pr-30
+						//- img.m-b-20(alt='', src='/front/assets/images/Parachute.svg')
+						h6.block-title.p-b-5
+							a.text-master(href="/admin/post/add")
+								| Add New Story 
+								i.pg-arrow_right.m-l-10
+						p.m-b-30
+							| Stories will be shown in the home page.
+						p.muted.font-arial.small-text.col-sm-9.no-padding Current stories:
+							span.p-l-5.fs-14.block-title= contextPost.length
+					.visible-xs.b-b.b-grey-light.m-t-30.m-b-30
+				.col-sm-6.col-md-3.no-padding
+					.p-r-40.md-pr-30
+						//- img.m-b-20(alt='', src='/front/assets/images/Prizemedalion.svg')
+						h6.block-title.p-b-5
+							a.text-master(href="/admin/upload/add")
+								| Add New Photos 
+								i.pg-arrow_right.m-l-10
+						p.m-b-30
+							| Upload Photos and check them in the portfolio.
+						p.muted.font-arial.small-text.col-sm-9.no-padding Current photos:
+							span.p-l-5.fs-14.block-title= contextUpload.length
+					.visible-xs.b-b.b-grey-light.m-t-30.m-b-30
+				.col-sm-6.col-md-3.no-padding
+					.p-r-40.md-pr-30
+						//- img.m-b-20(alt='', src='/front/assets/images/Umbrella.svg')
+						h6.block-title.p-b-5
+							a.text-master(href="/admin/album/add")
+								| Add Album 
+								i.pg-arrow_right.m-l-10
+						p.m-b-30
+							| Manage categories which those photos belong to.
+						p.muted.font-arial.small-text.col-sm-9.no-padding Current album:
+							span.p-l-5.fs-14.block-title= contextAlbum.length
+					.visible-xs.b-b.b-grey-light.m-t-30.m-b-30
+				.col-sm-6.col-md-3.no-padding
+					.p-r-40.md-pr-30
+						//- img.m-b-20(alt='', src='/front/assets/images/Umbrella.svg')
+						h6.block-title.p-b-5
+							a.text-master(href="/admin/enquiries")
+								| Enquiries 
+								i.pg-arrow_right.m-l-10
+						p.m-b-30
+							| People who have a message to you.
+						//- p.muted.font-arial.small-text.col-sm-9.no-padding Recived messages: 0
+	//- END CONTENT SECTION
+	
+	section.container.container-fixed-lg.p-t-65.p-b-60
+		.md-p-l-20.md-p-r-20.xs-no-padding
+			.row
+				.col-sm-3.xs-m-b-30
+					h2.font-montserrat.no-margin.text-uppercase.p-l-30.sm-no-padding
+						span(data-pages-animate='number', data-value='102345345', data-animation-duration='800') 0
+					h6.block-title.fs-13.m-t-5.text-uppercase.p-l-30.sm-no-padding.muted Active Guests
+				.col-sm-9
+					.md-p-l-20.sm-no-padding
+						p
+							| Our motivation "Perfection simplified" helps to craft meaningful experiences for the people around us, This mission inspires us to jump out of bed each day and guides every aspect of what we do.
+						p.m-t-30.fs-12.font-arial.hint-text
+							| Creative Direction, Code Perfection, Innovative Mindset
+			.progress.progress-tiny.m-t-15.m-b-5
+				.progress-bar.progress-bar-primary(role='progressbar', aria-valuenow='100', aria-valuemin='0', aria-valuemax='100', data-pages-animate='progressbar', data-percentage='100%')
+					span.sr-only 100% Complete
+			p.pull-right.font-arial.hint-text.fs-11
+				| 100% 
+				span.hint-text Higher than Previous Month
+	
+
+block scripts
+	//- BEGIN AUTO-ANIMATE NUMBERS
+	script(type='text/javascript', src='/front/assets/plugins/jquery-appear/jquery.appear.js')
+	script(type='text/javascript', src='/front/assets/plugins/animateNumber/jquery.animateNumbers.js')

@@ -1,0 +1,76 @@
+extends ../admin-layout
+
+block content
+	//- BEGIN BREADCRUMb
+	section.bg-master-lightest.p-t-15
+		.container
+			.row
+				ol.breadcrumb.m-b-0.bg-master-lightest
+					li.breadcrumb-item
+						a(href='/admin/post/add').semi-bold.text-primary 
+							i.pg-arrow_left_line_alt.m-r-5
+							| Back
+	section.p-t-15.p-b-65.bg-master-lightest
+		.container
+			//- START PAGE CONTENT
+			.content
+				//- START CONTAINER FLUID
+				.container-fluid.container-fixed-lg.bg-white
+					//- START PANEL
+					.panel.panel-transparent
+						.panel-heading
+							.panel-title
+								| Edit Banner
+							.clearfix
+						.panel-body
+							//- START FORM
+							form(role='form', autocomplete='off', enctype='multipart/form-data', method='post')
+								if context.length
+									.row.p-t-30
+										.col-md-4.col-sm-6
+											.row
+												.col-sm-12
+													.form-group.form-group-default
+														label(for='pos') Image Preview
+														img.m-t-10.m-b-10.background.full-width(src=context[0].picURL.url, data-bg-overlay='black', data-overlay-opacity='0.4' draggable='false', height='100%')
+										.col-md-8.col-sm-6
+											.row
+												.col-sm-12
+													.form-group.form-group-default
+														label(for='title') title
+														input#title.form-control(type='text', placeholder='Name of your title', name='title', value=context[0].title)
+											.row
+												.col-sm-12
+													.form-group.form-group-default
+														label(for='description') Description
+														input#description.form-control(type='text', placeholder='Tell us more about it', name='description', value=context[0].description)
+											.row
+												.col-sm-6
+													.form-group.form-group-default
+														label(for='picURL') Upload Image
+														input#picURL.form-control(type='file', placeholder='Tell us more about it', name='picURL', value=context[0].picURL)
+												.col-sm-6
+													.form-group.form-group-default
+														label(for='location') Location
+														input#location.form-control(type='text', placeholder='The place where the miracle happen', name='location', value=context[0].location)
+											.row
+												.col-sm-6
+													.form-group.form-group-default
+														.checkbox.check-primary.checkbox-circle
+															input#onPublic(type='checkbox', checked=context[0].onPublic, name="onPublic", onchange='this.value = this.checked;' value=context[0].onPublic)
+															label(for='onPublic') On Public
+												.col-sm-6
+													.form-group.form-group-default
+														label(for='pos') Position
+														input#pos.autonumeric.form-control(type='text', placeholder='Please input NUMBER', name='pos', value=context[0].pos)
+											.row
+												.col-md-12.col-sm-3
+													button.btn.btn-primary.btn-md
+														| Update
+
+					//- END PANEL
+block scripts
+	script.
+		$(function() {
+		    $('.autonumeric').autoNumeric('init');
+		});

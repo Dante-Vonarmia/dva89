@@ -1,0 +1,32 @@
+extends layout
+
+block content
+	//- BEGIN JUMBOTRON
+	section.jumbotron.full-height.relative(data-pages-bg-image='/front/assets/images/banner_1.jpg', data-bg-overlay='black', data-overlay-opacity='0.5')
+		.container-xs-height.full-height
+			.col-xs-height.col-middle.text-left
+				//- BEGIN CONTENT
+				.content-layer
+					.inner.full-height
+						.container-xs-height.full-height
+							.col-xs-height.col-middle.text-center
+								.container
+									.row
+										.col-md-6.col-md-offset-3
+											h6.block-title.m-b-0.text-white Dear Guest
+											h1.light.text-white.m-t-5(data-swiper-parallax='-15%')
+												| Thanks for your trust.
+											a.m-b-0.text-white(href="/")
+												i.fa.fa-home.m-r-5
+												| Go to home.
+				//- END CONTENT
+				//- .bottom-right.p-r-70.p-b-50.sm-p-r-20.sm-p-b-20
+				//- 	img.pull-right.m-t-5(src='assets/images/deviant_art_logo.png', alt='')
+				//- 	p.small-text.fs-12.text-white.hint-text.text-right.pull-right.m-r-10
+				//- 		| Photo credits
+				//- 		br
+				//- 		|  Sebastian Wagner | Digital Artist
+	//- END JUMBOTRON
+
+	script.
+		setTimeout(function() {window.location.href='/'}, 3000);

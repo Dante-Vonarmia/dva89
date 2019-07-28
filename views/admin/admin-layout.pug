@@ -1,0 +1,106 @@
+doctype html
+html
+	head
+		meta(http-equiv='content-type', content='text/html;charset=UTF-8')
+		meta(charset='utf-8')
+		title= title
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+		link(rel='apple-touch-icon', href='/front/pages/ico/60.png')
+		link(rel='apple-touch-icon', sizes='76x76', href='/front/pages/ico/76.png')
+		link(rel='apple-touch-icon', sizes='120x120', href='/front/pages/ico/120.png')
+		link(rel='apple-touch-icon', sizes='152x152', href='/front/pages/ico/152.png')
+		link(rel='icon', type='image/x-icon', href='/favicon.ico')
+		meta(name='apple-mobile-web-app-capable', content='yes')
+		meta(name='apple-touch-fullscreen', content='yes')
+		meta(name='apple-mobile-web-app-status-bar-style', content='default')
+		meta(name='description', content='')
+		meta(name='author', content='')
+		//- BEGIN PLUGINS
+		link(rel="stylesheet", href="/front/assets/css/vendor.css")
+		link(type='text/css', rel='stylesheet', href='/front/assets/plugins/jquery-datatable/media/css/dataTables.bootstrap.min.css')
+		link(type='text/css', rel='stylesheet', href='/front/assets/plugins/jquery-datatable/extensions/FixedColumns/css/dataTables.fixedColumns.min.css')
+		link(media='screen', type='text/css', rel='stylesheet', href='/front/assets/plugins/datatables-responsive/css/datatables.responsive.css')
+		//- END PLUGINS
+		//- BEGIN PAGES CSS
+		link.main-stylesheet(href='/front/pages/css/pages.min.css', rel='stylesheet', type='text/css')
+		link.main-stylesheet(href='/front/pages/css/pages-icons.min.css', rel='stylesheet', type='text/css')
+		link(href="/front/assets/css/style.css", rel='stylesheet', type='text/css')
+		block stylesheet
+		//- END PAGES CSS
+	body.pace-white
+
+		//- BEGIN MENU
+		nav.header.sm-header.relative.horizontal.dark(data-spy='affix', data-offset-top='60')
+			.container.relative
+				.visible-sm-inline.visible-xs-inline.menu-toggler.pull-left.p-t-15.p-b-15(data-pages='header-toggle', data-pages-element='#header', style='margin-top: 0!important;')
+					.one
+					.two
+					.three
+				#header.menu-content(data-pages-direction='slideRight')
+					//- BEGIN HEADER CLOSE TOGGLE FOR MOBILE
+					.pull-right
+						a.text-black.link.padding-10.visible-xs-inline.visible-sm-inline.pull-right.m-t-10.m-b-10.m-r-10(href='#', data-pages='header-toggle', data-pages-element='#header')
+							i.pg-close_line
+					.pull-left.sm-block.sm-full-width
+						.header-inner
+							ul.menu.no-padding
+								li
+									a.active(href='/admin', data-text='Home') Home 
+								li.classic
+									a(href='/admin/post/add', data-text='Stories')
+										i.m-r-15.pg-layouts
+										| Stories
+								li.classic
+									a(href='/admin/upload/add', data-text='Photos')
+										i.m-r-15.pg-image
+										| Photos
+								li.classic
+									a(href='/admin/album/add', data-text='Album')
+										i.m-r-15.pg-folder
+										| Album
+								li.classic
+									a(href='/admin/enquiries', data-text='Enquires')
+										i.m-r-15.pg-inbox
+										| Enquires
+								//- li.classic
+								//- 	a(href='docs', data-text='Docs')
+								//- 		i.m-r-15.pg-doc
+								//- 		| Docs
+					.pull-right.sm-block.sm-full-width
+						.header-inner
+							ul.menu.no-padding
+								li
+									a(href='/', target='_home', data-text='preview')
+										i.m-r-15.pg-home
+										| Preview
+								li
+									a(href='javascript:;', data-text='Drop')
+										| #{user}
+		//- END MENU
+		block content
+		//- BEGIN CORE FRAMEWORK
+		script(type='text/javascript', src='/front/assets/plugins/pace/pace.min.js')
+		script(type='text/javascript', src='/front/pages/js/pages.image.loader.js')
+		script(type='text/javascript', src='/front/assets/plugins/jquery/jquery-1.11.1.min.js')
+		script(type='text/javascript', src='/front/assets/plugins/bootstrap/js/bootstrap.min.js')
+		script(type='text/javascript', src='/front/assets/plugins/classie.js')
+		//- Waits for the images to be loaded before applying the Isotope plugin
+		script(type='text/javascript', src='/front/assets/plugins/imagesloaded/imagesloaded.pkgd.min.js')
+		//- Isotope plugin arranges the card layout
+		script(type='text/javascript', src='/front/assets/plugins/jquery-isotope/isotope.pkgd.min.js')
+		//- BEGIN RETINA IMAGE LOADER
+		script(type='text/javascript', src='/front/assets/plugins/jquery-unveil/jquery.unveil.min.js')
+		//- BEGIN DATATABLES DEPENDENCIES
+		script(type='text/javascript', src='/front/assets/plugins/jquery-autonumeric/autoNumeric.js')
+		script(type='text/javascript', src='/front/assets/plugins/jquery-datatable/media/js/jquery.dataTables.min.js')
+		script(type='text/javascript', src='/front/assets/plugins/jquery-datatable/extensions/TableTools/js/dataTables.tableTools.min.js')
+		script(type='text/javascript', src='/front/assets/plugins/jquery-datatable/extensions/Bootstrap/jquery-datatable-bootstrap.js')
+		script(type='text/javascript', src='/front/assets/plugins/datatables-responsive/js/datatables.responsive.js')
+		script(type='text/javascript', src='/front/assets/plugins/datatables-responsive/js/lodash.min.js')
+		//- BEGIN YOUR CUSTOM JS
+		block scripts
+		//- BEGIN PAGES FRONTEND LIB
+		script(type='text/javascript', src='/front/pages/js/pages.frontend.min.js')
+		//- END PAGES LIB
+
+

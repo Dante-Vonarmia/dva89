@@ -1,0 +1,147 @@
+extends layout
+
+mixin photoItem(item)
+	.grid__item(data-size='1280x857')
+		a.img-wrap(href=item.picURL.url)
+			img(src=item.picURL.url, alt='')
+			.description.description--grid
+				h3.text-master #{item.title}
+				p
+					| #{item.description.brief}
+					em — Ysraccoon
+				.details
+					ul
+						li
+							i.icon.icon-camera
+							span Canon PowerShot S95
+						li
+							i.icon.icon-focal_length
+							span 22.5mm
+						li
+							i.icon.icon-aperture
+							span ƒ/5.6
+						li
+							i.icon.icon-exposure_time
+							span 1/1000
+						li
+							i.icon.icon-iso
+							span 80
+
+block stylesheet
+	link(rel='stylesheet', type='text/css', href='/grids/css/style2.css')
+	script(src='/grids/js/modernizr-custom.js')
+
+block content
+	//- BEGIN BREADCRUMb
+	section.jumbotron.full-height.bg-master-darkest
+		.swiper-slide.fit.bg-info
+			//- BEGIN IMAGE PARRALAX
+			.slider-wrapper
+				.background-wrapper(data-swiper-parallax='20%')
+					//- YOUR BACKGROUND IMAGE HERE, YOU CAN ALSO USE IMG with the same classes
+					.background(data-pages-bg-image=heroImg.url, data-bg-overlay='black', data-overlay-opacity='0.4' draggable='false')
+			//- END IMAGE PARRALAX
+			.inner.full-height
+				.container-xs-height.full-height
+					.col-xs-height.col-middle.text-left
+						.container.text-center
+							.row
+								h1.light.text-white
+									| #{context[0].album.title}
+									br
+								h4.block-title.text-uppercase.text-white #{context[0].album.catalog}
+									br
+									span.fs-12.font-montserrat.text-uppercase Ysraccoon
+
+	section.sm-m-t-40.m-t-60
+		.container
+			.row
+				ol.breadcrumb.m-b-0.bg-transparent
+					li.breadcrumb-item
+						a(href='/portfolio').semi-bold.text-primary 
+							i.fa.fa-arrow-left.m-r-5
+							| Back to Portfolio Page
+		.container.sm-m-b-40.m-b-60
+			.content
+				.grid
+					if context.length
+						each item in context
+							+photoItem(item)
+				//- /grid
+				.preview
+					button.action.action--close
+						i.pg-close
+						span.text-hidden Close
+					.description.description--preview
+				//- /preview
+			//- /content
+	
+block scripts
+	script(src='/grids/js/masonry.pkgd.min.js')
+	script(src='/grids/js/main.js')
+	script.
+		(function() {
+			var support = {
+					transitions: Modernizr.csstransitions
+				},
+				// transition end event name
+				transEndEventNames = {
+					'WebkitTransition': 'webkitTransitionEnd',
+					'MozTransition': 'transitionend',
+					'OTransition': 'oTransitionEnd',
+					'msTransition': 'MSTransitionEnd',
+					'transition': 'transitionend'
+				},
+				transEndEventName = transEndEventNames[Modernizr.prefixed('transition')],
+				onEndTransition = function(el, callback) {
+					var onEndCallbackFn = function(ev) {
+						if (support.transitions) {
+							if (ev.target != this) return;
+							this.removeEventListener(transEndEventName, onEndCallbackFn);
+						}
+						if (callback && typeof callback === 'function') {
+							callback.call(this);
+						}
+					};
+					if (support.transitions) {
+						el.addEventListener(transEndEventName, onEndCallbackFn);
+					} else {
+						onEndCallbackFn();
+					}
+				};
+			new GridFx(document.querySelector('.grid'), {
+				imgPosition: {
+					x: -0.5,
+					y: 1
+				},
+				onOpenItem: function(instance, item) {
+					instance.items.forEach(function(el) {
+						if (item != el) {
+							var delay = Math.floor(Math.random() * 50);
+							el.style.WebkitTransition = 'opacity .5s ' + delay + 'ms cubic-bezier(.7,0,.3,1), -webkit-transform .5s ' + delay + 'ms cubic-bezier(.7,0,.3,1)';
+							el.style.transition = 'opacity .5s ' + delay + 'ms cubic-bezier(.7,0,.3,1), transform .5s ' + delay + 'ms cubic-bezier(.7,0,.3,1)';
+							el.style.WebkitTransform = 'scale3d(0.1,0.1,1)';
+							el.style.transform = 'scale3d(0.1,0.1,1)';
+							el.style.opacity = 0;
+						}
+						el.preventDefault();
+					});
+				},
+				onCloseItem: function(instance, item) {
+					instance.items.forEach(function(el) {
+						if (item != el) {
+							el.style.WebkitTransition = 'opacity .4s, -webkit-transform .4s';
+							el.style.transition = 'opacity .4s, transform .4s';
+							el.style.WebkitTransform = 'scale3d(1,1,1)';
+							el.style.transform = 'scale3d(1,1,1)';
+							el.style.opacity = 1;
+							onEndTransition(el, function() {
+								el.style.transition = 'none';
+								el.style.WebkitTransform = 'none';
+							});
+						}
+						el.preventDefault();
+					});
+				}
+			});
+		})();

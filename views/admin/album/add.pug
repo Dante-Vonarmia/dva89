@@ -1,0 +1,113 @@
+extends ../admin-layout
+
+mixin tableList(item)
+	tr
+		td.v-align-middle.semi-bold
+			p= item.title 
+		td.v-align-middle
+			p= item.catalog 
+		td.v-align-middle
+			p #{moment(item.addDate).format('MM-DD-YYYY')}
+		td.v-align-middle
+			a(href='/admin/album/edit/' + item.id).btn.btn-primary.btn-sm
+				i.fa.fa-edit
+		td.v-align-middle
+			a(href='/admin/album/del/' + item.id).btn.btn-danger.btn-sm
+				i.pg-trash
+block content
+	//- MODAL STICK UP
+	#addNewAppModal.modal.fade.stick-up(tabindex='-1', role='dialog', aria-labelledby='addNewAppModal', aria-hidden='true')
+		.modal-dialog
+			.modal-content
+				.modal-header.clearfix
+					button.close(type='button', data-dismiss='modal', aria-hidden='true')
+						i.pg-close.fs-14
+					h4.p-b-5
+						span.semi-bold New
+						|  Album
+				//- START PANEL
+				form(role='form', autocomplete='off', method='post')
+					.modal-body
+						.row
+							.col-xs-12
+								.form-group.form-group-default
+									label.control-label 
+										| Album Name
+									input.form-control.input-sm(type='text', name='title')
+						.row
+							.col-xs-12
+								.form-group.form-group-default
+									label.control-label 
+										| Choose Catalog
+									select(name='catalog')
+										option(value='character') Character
+										option(value='night') Night Scenes
+										option(value='objects') Objects
+										option(value='portraits') Portraits
+										option(value='landscapes') Landscapes
+										option(value='sports') Sports
+										option(value='others') Others
+						.row
+							.col-sm-12
+								button#add.btn.btn-primary.btn-cons(type='submit') Add
+								button.btn.btn-cons(type='button', data-dismiss='modal') Close
+
+
+	section.p-t-30.bg-master-lightest
+		.container
+			h6.block-title.m-b-30
+				| Album Management
+			//- START PAGE CONTENT
+			.content
+				//- START CONTAINER FLUID
+				.container-fluid.container-fixed-lg
+					//- START card
+					.panel.panel-transparent
+						.panel-header
+							.row
+								button#show-modal.btn.btn-primary.btn-cons
+									i.fa.fa-plus.m-r-5
+									|  Add
+							.clearfix
+					//- END card
+				//- END CONTAINER FLUID
+
+	section.p-b-65.p-t-30.bg-master-lightest
+		.container
+			//- START PAGE CONTENT
+			.content
+				//- START CONTAINER FLUID
+				.container-fluid.container-fixed-lg.bg-white
+					//- START PANEL
+					.panel.panel-transparent
+						.panel-heading
+							.panel-title
+								| Table
+							.pull-right
+								.col-xs-12
+									.row
+										input.search-table.form-control.pull-right(type='text', placeholder='Search')
+							.clearfix
+						.panel-body
+							.table-responsive
+								table#postList.table.table-hover.demo-table-search.table-responsive-block
+									if context.length
+										thead
+											tr
+												th Album Name
+												th Catalog
+												th Date
+												th Edit
+												th Delete
+										tbody
+											each item in context
+												+tableList(item)
+									else
+										tr
+											td.v-align-middle.semi-bold(colspan='4')
+												p.m-b-0 No record(s).
+
+			//- END PANEL
+
+block scripts
+	script(type='text/javascript', src='/front/assets/js/table.js')
