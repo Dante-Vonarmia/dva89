@@ -33,7 +33,7 @@ module.exports = function(app) {
 	Admin.find(function(err, user) {
 		if (user.length) return;
 		new Admin({
-			name: 'ysraccoon',
+			name: 'dva89',
 			password: "admin123",
 			unique: true
 		}).save();
@@ -45,12 +45,12 @@ module.exports = function(app) {
 			title: 'Welcome',
 			onPublic: true,
 			picURL: {
-				url: '/front/assets/images/ys-home.jpg'
+				url: '/front/assets/images/hero_1.jpg'
 			},
 			description: 'Stay as who you are.',
 			addDate: new Date().now,
 			pos: 1,
-			location: 'Troy, AL',
+			location: 'Austin, TX',
 		}).save();
 	});
 

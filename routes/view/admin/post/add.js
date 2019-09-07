@@ -24,7 +24,7 @@ router.get('/', function(req, res, next) {
 			}
 		})
 		res.render('admin/post/add', {
-			title   : 'Add Banner - YSRACCOON',
+			title   : 'Add Banner - DVA89',
 			curl    : req.originalUrl,
 			user    : req.session.user.name,
 			context : post

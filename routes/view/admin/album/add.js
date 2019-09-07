@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
 			}
 		})
 		res.render('admin/album/add', {
-			title   : 'Add Album - YSRACCOON',
+			title   : 'Add Album - DVA89',
 			user    : req.session.user.name,
 			context : album
 		});

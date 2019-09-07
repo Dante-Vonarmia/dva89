@@ -9,7 +9,7 @@ const router  = express.Router();
 router.get('/', function(req, res, next) {
 	Promise.all([post.find(), album.find(), upload.find()]).spread(function(post, album, upload) {
 		res.render('admin/admin', {
-			title         : 'CMS - YSRACCOON',
+			title         : 'CMS - DVA89',
 			curl          : req.originalUrl,
 			user          : req.session.user.name,
 			contextPost   : post,

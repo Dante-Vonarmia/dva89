@@ -24,7 +24,7 @@ router.get('/', function(req, res, next) {
 		})
 
 		res.render('admin/upload/add', {
-			title       : 'Upload Photos - YSRACCOON',
+			title       : 'Upload Photos - DVA89',
 			curl        : req.originalUrl,
 			chooseAlbum : albumData,
 			context     : upload,

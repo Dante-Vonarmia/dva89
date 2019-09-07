@@ -13,7 +13,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false })
 /* GET login page. */
 router.get('/', function(req, res, next) {
 	res.render('login', {
-		title: 'Ysraccoon\'s - Access Secret Gate',
+		title: 'DVA89\'s - Access Secret Gate',
 		user: req.session.user
 	});
 });

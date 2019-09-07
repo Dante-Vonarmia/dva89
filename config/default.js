@@ -1,8 +1,8 @@
 module.exports = {
 	port: 3000,
 	session: {
-		cookieSecret: 'ysraccoon',
-		key: 'ysraccoon',
+		cookieSecret: 'dva89',
+		key: 'dva89',
 		maxAge: 2592000000
 	},
 	cookie: {
@@ -12,10 +12,10 @@ module.exports = {
 	},
 	mongodb: {
 		development: {
-			connectionString: 'mongodb://localhost:27017/ysraccoon'
+			connectionString: 'mongodb://localhost:27017/dva89'
 		},
 		production: {
-			connectionString: 'mongodb://localhost:27017/ysraccoon-test'
+			connectionString: 'mongodb://localhost:27017/dva89-test'
 		}
 	}
 };

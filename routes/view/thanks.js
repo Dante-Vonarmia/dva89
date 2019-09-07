@@ -4,7 +4,7 @@ const router = express.Router();
 /* GET thanks page. */
 router.get('/', function(req, res, next) {
 	res.render('thanks', {
-		title: 'Thanks - Ysraccoon',
+		title: 'Thanks - DVA89',
 	});
 });
 

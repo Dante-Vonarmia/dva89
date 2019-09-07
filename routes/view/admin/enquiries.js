@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 			}
 		})
 		res.render('admin/enquiries', {
-			title   : 'Enquiries - Ysraccoon',
+			title   : 'Enquiries - DVA89',
 			user    : req.session.user.name,
 			context : enquiries
 		});

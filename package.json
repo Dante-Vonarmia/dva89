@@ -1,5 +1,5 @@
 {
-  "name": "ysraccoon",
+  "name": "dva89",
   "version": "1.0.0",
   "description": "Portal Website for Resume",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dante-Vonarmia/ysraccoon.git"
+    "url": "git+https://github.com/Dante-Vonarmia/dva89.git"
   },
   "author": "Dante Von Armia",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Dante-Vonarmia/ysraccoon/issues"
+    "url": "https://github.com/Dante-Vonarmia/dva89/issues"
   },
-  "homepage": "https://github.com/Dante-Vonarmia/ysraccoon#readme",
+  "homepage": "https://github.com/Dante-Vonarmia/dva89#readme",
   "dependencies": {
     "async": "^2.5.0",
     "bluebird": "^3.5.0",

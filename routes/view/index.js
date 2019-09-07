@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
 			}
 		})
 		res.render('index', {
-			title: 'Home - YSRACCOON',
+			title: 'Home - DVA89',
 			curl: req.originalUrl,
 			context: post
 		});
