@@ -45,7 +45,7 @@ module.exports = function(app) {
 			title: 'Welcome',
 			onPublic: true,
 			picURL: {
-				url: '/front/assets/images/hero_1.jpg'
+				url: '/front/assets/images/home.jpg'
 			},
 			description: 'Author: Dante Von Alcatraz',
 			addDate: new Date().now,
