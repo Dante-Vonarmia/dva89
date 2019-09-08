@@ -20,7 +20,8 @@ mixin bannerList(item)
 									span.text-uppercase
 										| #{item.title}
 									br
-									span.fs-16.font-montserrat(data-pages-init='text-rotate', data-speed='2000', data-animation='fade') Dante Von Armia
+									if item.pos == 1
+										a.btn.btn-lg.btn-cons.btn-rounded.m-t-20(href="/portfolio") Explore
 		.bottom-left.p-l-70.p-b-50.sm-p-l-20.sm-p-b-20(data-pages-animation='standard', data-delay='1600', data-type='transition.slideUpIn')
 			h6.block-title.text-master-light.text-left
 				| Description

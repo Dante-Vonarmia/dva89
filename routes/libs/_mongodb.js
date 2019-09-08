@@ -47,7 +47,7 @@ module.exports = function(app) {
 			picURL: {
 				url: '/front/assets/images/hero_1.jpg'
 			},
-			description: 'Stay as who you are.',
+			description: 'Author: Dante Von Alcatraz',
 			addDate: new Date().now,
 			pos: 1,
 			location: 'Austin, TX',

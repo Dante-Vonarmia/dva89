@@ -1,133 +1,90 @@
 extends layout
 
-mixin albumList(item)
-	li.m-r-20.m-l-20.inline.sm-inline.text-center
-		span.link.active.text-black.fs-13.block-title(data-filter='.' + item)= item 
-
-mixin gridList(item)
-	//- START GALLERY ITEM
-	.gallery-item.col-sm-3.col-xs-12.no-padding.hover-zoom(class=item.album.catalog)
-		a.pointer(href="/portfolio/" + item.album.id)
-			.inner.bottom-left.bottom-right.padding-30
-				.block-title.text-white.no-margin Album: #{item.album.title}
-				h6.block-title.fs-11.hint-text.text-white.m-t-5.m-b-0 #{moment(item.addDate).format('MM-DD-YYYY')}
-				h6.block-title.fs-11.text-white.muted.m-t-5.m-b-0 Photo: #{item.title}
-			if (item.picURL.width > item.picURL.height)
-				.ar-1-1
-					div.background(data-pages-bg-image=item.picURL.url, data-bg-overlay='black', data-overlay-opacity='0.4')
-			else 
-				.ar-1-2
-					div.background(data-pages-bg-image=item.picURL.url, data-bg-overlay='black', data-overlay-opacity='0.4')
-	//- END GALLERY ITEM
-
-
-block stylesheet
-	link(rel='stylesheet', type='text/css', href='/ArticleIntroEffects/css/component.css')
-		
 block content
-	#container.full-width.intro-effect-push
-		//- Top Navigation
-		header.header
-			//- BEGIN HERO WITH PARALLAX
-			section.inner.full-height
-				//- BEGIN SLIDER
-				#hero.swiper-container
-					.swiper-wrapper
-						//- BEGIN SLIDE
-						.swiper-slide.fit.bg-info
-							//- BEGIN IMAGE PARRALAX
-							.slider-wrapper
-								.background-wrapper(data-swiper-parallax='20%')
-									//- YOUR BACKGROUND IMAGE HERE, YOU CAN ALSO USE IMG with the same classes
-									.background(data-pages-bg-image='/front/assets/images/hero_5.jpg', draggable='true')
-							//- END IMAGE PARRALAX
-							//- BEGIN CONTENT
-							.content-layer
-								.inner.full-height
-									.container-xs-height.full-height
-										.col-xs-height.col-middle.text-left
-											.container.text-center
-												h2.light.text-white(data-pages-animation='standard', data-delay='1100', data-type='transition.slideDownIn')
-													| Career
-													br
-													span.fs-16.font-montserrat.text-uppercase(data-pages-init='text-rotate', data-speed='2000', data-animation='fade') as
-													br
-													span.font-montserrat.text-uppercase(data-pages-init='text-rotate', data-speed='2000', data-animation='fade') Photographer
-							//- END CONTENT
-						//- END SLIDE
-					
-					//- BEGIN ANIMATED MOUSE
-					.mouse-wrapper
-						.mouse
-							.mouse-scroll
-			//- END HERO WITH PARALLAX
+	section.jumbotron.full-height(data-pages='parallax')
+		.inner.full-height
+			//- BEGIN SLIDER
+			#hero.swiper-container
+				.swiper-wrapper
+					//- BEGIN SLIDE
+					.swiper-slide.fit.bg-info
+						//- BEGIN IMAGE PARRALAX
+						.slider-wrapper
+							.background-wrapper(data-swiper-parallax='20%')
+								//- YOUR BACKGROUND IMAGE HERE, YOU CAN ALSO USE IMG with the same classes
+								.background(data-pages-bg-image='/front/assets/images/hero_5.jpg', draggable='false')
+						//- END IMAGE PARRALAX
+						//- BEGIN CONTENT
+						.content-layer
+							.inner.full-height
+								.container-xs-height.full-height
+									.col-xs-height.col-middle.text-left
+										.container.text-center
+											h2.light.text-white(data-pages-animation='standard', data-delay='1100', data-type='transition.slideDownIn')
+												| Career
+												br
+												span.fs-16.font-montserrat.text-uppercase as
+												br
+												span.font-montserrat(data-pages-init='text-rotate', data-speed='2000', data-animation='fade') Software Engineer, DevOps Engineer, Data Analyst
 
-		article.content
-			section.p-b-65.p-t-60.bg-master-darkest.background(data-pages-bg-image='/front/assets/images/paralax_1.jpg', data-bg-overlay='black')
-				.container
-					.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
-						.text-center
-							h5.block-title.text-white.no-margin Menu Clipping 
-							h1.text-white.col-sm-12.m-t-5.m-b-30 Celebrate Motion paralax scroll.
-			//- //- BEGIN CONTENT SECTION
-			//- section.p-t-40
-			//- 	.container
-			//- 		h5.block-title.hint-text.no-margin Bio
-			//- 		h5
-			//- 			| Our long standing vision has been to bypass the usual admin dashboard structure, and move forward with a more
-			//- 			| sophisticated yet simple framework that would create a credible impact on the many conventional dashboard users.
-			//- //- END CONTENT SECTION
-			//- BEGIN PORTFOLIO SECTION
-			section.sm-p-t-40.p-t-60.jumbotron.full-height
-				.container
-					.m-b-30
-						h1.text-center Showcase.
-						.b-b.b-grey.m-t-30
-						.col-sm-12.p-t-15.p-b-15.text-center
-							if chooseAlbum.length
-								ul#filters.no-style.no-margin.li-group
-									li.m-r-20.m-l-20.inline.sm-inline.text-center
-										span.link.active.text-black.fs-13.block-title(data-filter='*') ALL
-									//- - var items = ['character','night','objects','portraits','landscapes','sports','others'];
-									each item in chooseAlbum
-										+albumList(item)
-				.gallery
-					.grid-sizer.col-sm-3.col-xs-6.no-padding
-					if context.length
-						each item in context
-							+gridList(item)
-					else
-						.col-sm-12.p-t-15.p-b-65.text-center
-							p You have nothing to show yet.
-			//- END PORTFOLIO SECTION
-	
+						//- END CONTENT
+					//- END SLIDE
+				
+				//- BEGIN ANIMATED MOUSE
+				.mouse-wrapper
+					.mouse
+						.mouse-scroll
+		//- END HERO WITH PARALLAX
+
+	article.content
+		//- BEGIN CONTENT SECTION
+		section.bg-master-lightest.p-b-85.p-t-75
+			.container
+				.md-p-l-20.md-p-r-20.xs-no-padding
+					h5.block-title.hint-text.no-margin Explore
+					.row
+						.col-sm-5.col-md-4
+							h1.m-t-5 About me.
+						.col-sm-7.col-md-8.no-padding.xs-p-l-15.xs-p-r-15
+							.p-t-20.p-l-35.md-p-l-5.md-p-t-15
+								p
+									| Our long standing vision has been to bypass the usual admin dashboard structure, and move forward with a more sophisticated yet simple framework that would create a credible impact on the many conventional dashboard users.
+								p.hint-text.font-arial.small-text.col-md-7.no-padding
+									| A product is accessible when all people regardless of ability can navigate it, understand it, and use it to achieve goals.
+		//- END CONTENT SECTION
+		//- BEGIN CONTENT SECTION
+		section.p-b-85.p-t-75.p-b-65.p-t-55
+			.container
+				.md-p-l-20.xs-no-padding.clearfix
+					.col-sm-4.no-padding
+						.p-r-40.md-pr-30
+							img.m-b-20(alt='', src='/front/assets/images/Parachute.svg')
+							h6.block-title.p-b-5
+								| Launch Design 
+							p.m-b-30
+								| Awesome notepad app. It gives you a quick and simple notepad editing experience when you write notes.
+							p.muted.font-arial.small-text.col-sm-9.no-padding Icon Fonts, Vector SVG's, pages 14x14px vector icons.
+						.visible-xs.b-b.b-grey-light.m-t-30.m-b-30
+					.col-sm-4.no-padding
+						.p-r-40.md-pr-30
+							img.m-b-20(alt='', src='/front/assets/images/Prizemedalion.svg')
+							h6.block-title.p-b-5
+								| Award Wining 
+							p.m-b-30
+								| Quick chat helps you to Keep in touch with your friends and colleagues while working. It has a unique responsive design.
+							p.muted.font-arial.small-text.col-sm-9.no-padding Limitless possibilities, Highly customizable, Great UI & UX
+						.visible-xs.b-b.b-grey-light.m-t-30.m-b-30
+					.col-sm-4.no-padding
+						.p-r-40.md-pr-30
+							img.m-b-20(alt='', src='/front/assets/images/Umbrella.svg')
+							h6.block-title.p-b-5
+								| Shop ready 
+							p.m-b-30
+								| This is a very young collection of charts, with the goal of keeping these components very customizable.
+							p.muted.font-arial.small-text.col-sm-9.no-padding Highly customizable NVD3, rickshaw, Spark Lines, D3.
+		//- END CONTENT SECTION
+
+
 block scripts
-	script(src='/front/assets/js/portfolio.js')
-	script.
+	script(type='text/javascript', src='/front/assets/plugins/text-rotate/jquery.simple-text-rotator.min.js')
 
-		$(function(){
-			// init Isotope
-			var $grid = $('.gallery').isotope({
-				itemSelector: '.gallery-item',
-				layoutMode: 'fitRows',
-			});
-
-			// bind filter button click
-			$('#filters').on('click', 'li > span', function() {
-				var filterValue = $(this).attr('data-filter');
-				// use filterFn if matches value
-				//- filterValue = filterFns[ filterValue ] || filterValue;
-				$grid.isotope({
-					filter: filterValue
-				});
-			});
-		});
-
-			//- // change is-checked class on buttons
-			//- $('.li-group').each(function(i, buttonGroup) {
-			//- 	var $buttonGroup = $(buttonGroup);
-			//- 	$buttonGroup.on('click', 'a', function() {
-			//- 		$buttonGroup.find('.is-checked').removeClass('is-checked');
-			//- 		$(this).addClass('is-checked');
-			//- 	});
-			//- });
