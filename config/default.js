@@ -1,5 +1,5 @@
 module.exports = {
-	port: 3000,
+	port: 6000,
 	session: {
 		cookieSecret: 'dva89',
 		key: 'dva89',
