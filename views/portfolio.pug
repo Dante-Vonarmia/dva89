@@ -20,12 +20,12 @@ block content
 								.container-xs-height.full-height
 									.col-xs-height.col-middle.text-left
 										.container.text-center
-											h2.light.text-white(data-pages-animation='standard', data-delay='1100', data-type='transition.slideDownIn')
+											h1.light.text-white(data-pages-animation='standard', data-delay='400', data-type='transition.slideDownIn')
 												| Career
 												br
 												span.fs-16.font-montserrat.text-uppercase as
 												br
-												span.font-montserrat(data-pages-init='text-rotate', data-speed='2000', data-animation='fade') Software Engineer, DevOps Engineer, Data Analyst
+												span.font-montserrat(data-pages-init='text-rotate', data-speed='1500', data-animation='fade') Software Engineer, DevOps Engineer, Data Analyst
 
 						//- END CONTENT
 					//- END SLIDE
@@ -38,53 +38,194 @@ block content
 
 	article.content
 		//- BEGIN CONTENT SECTION
-		section.bg-master-lightest.p-b-85.p-t-75
+		section.p-b-85.p-t-75
 			.container
 				.md-p-l-20.md-p-r-20.xs-no-padding
-					h5.block-title.hint-text.no-margin Explore
+					h5.block-title.hint-text.no-margin Bio
 					.row
-						.col-sm-5.col-md-4
+						.col-sm-5.col-md-4.xs-p-l-15.xs-p-r-15
 							h1.m-t-5 About me.
 						.col-sm-7.col-md-8.no-padding.xs-p-l-15.xs-p-r-15
 							.p-t-20.p-l-35.md-p-l-5.md-p-t-15
 								p
-									| Our long standing vision has been to bypass the usual admin dashboard structure, and move forward with a more sophisticated yet simple framework that would create a credible impact on the many conventional dashboard users.
-								p.hint-text.font-arial.small-text.col-md-7.no-padding
-									| A product is accessible when all people regardless of ability can navigate it, understand it, and use it to achieve goals.
+									| In the past 10 years of experience about study or utilize coding, I come out my own theory. There are three basic dimensions: 
+									b the Object, the Attribution, the Event. 
+									| And base on this abstract concept I achieved in many field such as: ERP, Web Application, Online Payment Module, CMS, et, al. 
+									| After 3 years old of master's degree study, now I'm pursue to be a full-stack engineer which focus on the certain direction of  Data Visualization. Meanwhile, I also equipped the basic skills as a DevOps Engineer.
+								p.hint-text.font-arial.small-text.col-md-8.no-padding
+									| Master's Degree in Troy University, Alabama. 
+									br
+									| Studied in AI Dept. Achieved paper study in computer vision filed.
+		//- END CONTENT SECTION
+		//- BEGIN CONTENT SECTION
+		section.bg-master-lightest.p-b-85.p-t-75.p-b-65.p-t-55
+			.container.text-center
+				.row
+					.col-sm-8.col-sm-offset-2
+						h5.block-title.hint-text.no-margin Career
+						h1.m-t-5.light
+							| Qualified Job Titles
+			.container(role='tablist')
+				.md-p-l-20.xs-no-padding.clearfix
+					.col-sm-4.no-padding
+						#one-tab.padding-15(data-toggle='tab', href='#one', aria-controls='one' aria-selected='true')
+							h1
+								i.bold.text-primary.fa.fa-code.large.cursor
+							a.block.block-title.p-b-5.text-primary(href="javascript:void(0);")
+								| software engineer 
+								i.fa.fa-link
+							p
+								| Socket; NodeJS; Design Pattern; RESTful API; AMD/CMD; MVC/MVVM; Functional Programming;
+							p.muted.font-arial.small-text.col-sm-9.no-padding
+								| JS ES6; C++14; Python; NoSQL; SQL.
+						.visible-xs.b-b.b-grey-light.m-t-30.m-b-30
+					.col-sm-4.no-padding
+						#two-tab.padding-15(data-toggle='tab', href='#two' aria-controls='two' aria-selected='false')
+							h1
+								i.bold.text-primary.fa.fa-terminal.cursor
+							a.block.block-title.p-b-5.text-primary(href="javascript:void(0);")
+								| devops engineer 
+								i.fa.fa-link
+							p
+								| Server Administration; Git Control; SSL/SSH; HTTP/HTTPS; VIM; Terminal CLI; DNS; Unit Test; 
+							p.muted.font-arial.small-text.col-sm-9.no-padding
+								| Nginx; Bash Scripting; Docker; Linux.
+								b 3+ years
+						.visible-xs.b-b.b-grey-light.m-t-30.m-b-30
+					.col-sm-4.no-padding
+						#three-tab.padding-15(data-toggle='tab', href='#three' aria-controls='three' aria-selected='false')
+							h1
+								i.bold.text-primary.fa.fa-bar-chart.cursor
+							a.block.block-title.p-b-5.text-primary(href="javascript:void(0);")
+								| data analyst 
+								i.fa.fa-link
+							p
+								| Practical Statistics; Linear Algebra; Data Visualization; Data Mining; Machine Learning;
+							p.muted.font-arial.small-text.col-sm-9.no-padding
+								| D3.js, R, Python, Tensorflow.
+								b 2+ years
 		//- END CONTENT SECTION
 		//- BEGIN CONTENT SECTION
 		section.p-b-85.p-t-75.p-b-65.p-t-55
 			.container
-				.md-p-l-20.xs-no-padding.clearfix
-					.col-sm-4.no-padding
-						.p-r-40.md-pr-30
-							img.m-b-20(alt='', src='/front/assets/images/Parachute.svg')
-							h6.block-title.p-b-5
-								| Launch Design 
-							p.m-b-30
-								| Awesome notepad app. It gives you a quick and simple notepad editing experience when you write notes.
-							p.muted.font-arial.small-text.col-sm-9.no-padding Icon Fonts, Vector SVG's, pages 14x14px vector icons.
-						.visible-xs.b-b.b-grey-light.m-t-30.m-b-30
-					.col-sm-4.no-padding
-						.p-r-40.md-pr-30
-							img.m-b-20(alt='', src='/front/assets/images/Prizemedalion.svg')
-							h6.block-title.p-b-5
-								| Award Wining 
-							p.m-b-30
-								| Quick chat helps you to Keep in touch with your friends and colleagues while working. It has a unique responsive design.
-							p.muted.font-arial.small-text.col-sm-9.no-padding Limitless possibilities, Highly customizable, Great UI & UX
-						.visible-xs.b-b.b-grey-light.m-t-30.m-b-30
-					.col-sm-4.no-padding
-						.p-r-40.md-pr-30
-							img.m-b-20(alt='', src='/front/assets/images/Umbrella.svg')
-							h6.block-title.p-b-5
-								| Shop ready 
-							p.m-b-30
-								| This is a very young collection of charts, with the goal of keeping these components very customizable.
-							p.muted.font-arial.small-text.col-sm-9.no-padding Highly customizable NVD3, rickshaw, Spark Lines, D3.
+				.tab-content.padding-15
+					#one.tab-pane.fade.in.active(role='tabpanel', aria-labelledby='one-tab') 
+						.md-p-l-20.md-p-r-20.xs-no-padding
+							.row
+								.col-sm-6.b-r.b-grey.xs-b-b.b-grey
+									h5.block-title.hint-text.no-margin 7+ years
+									h2.m-t-5 Software Engineer
+									.col-sm-10.no-padding
+										h3.hint-text content
+								.col-sm-6.xs-p-t-30
+									.p-l-30.xs-no-padding
+										p
+											|
+
+					#two.tab-pane.fade(role='tabpanel', aria-labelledby='two-tab')
+						.md-p-l-20.md-p-r-20.xs-no-padding
+							.row
+								.col-sm-6.b-r.b-grey.xs-b-b.b-grey
+									h5.block-title.hint-text.no-margin 3+ years
+									h2.m-t-5 DevOps Engineer
+									.col-sm-10.no-padding
+										h3.hint-text content
+								.col-sm-6.xs-p-t-30
+									.p-l-30.xs-no-padding
+										p
+											| devops engineer
+					#three.tab-pane.fade(role='tabpanel', aria-labelledby='three-tab')
+						.md-p-l-20.md-p-r-20.xs-no-padding
+							.row
+								.col-sm-6.b-r.b-grey.xs-b-b.b-grey
+									h5.block-title.hint-text.no-margin 2+ years
+									h2.m-t-5 Data Analyst
+									.col-sm-10.no-padding
+										h3.hint-text content
+								.col-sm-6.xs-p-t-30
+									.p-l-30.xs-no-padding
+										p
+											| data analyst
+		//- START CONTENT SECTION
+		section#demo-testimonial-1.p-b-50.p-t-50.bg-master-light(data-pages-bg-image="/front/assets/images/hero_5.jpg", data-pages="parallax", data-bg-overlay="dark", data-overlay-opacity="0.1")
+			.text-center
+				h1.text-master-light
+					i.fa.fa-quote-left
+				h6.text-master-light.font-montserrat.text-uppercase.fs-15.text-center Companies I served
+			//- BEGIN TESTIMONIALS SLIDER
+			.container
+				.swiper-container.m-t-60
+					.swiper-wrapper
+						//- BEGIN TESTIMONIAL
+						.swiper-slide.bg-transparent
+							.container
+								.row
+									.col-sm-8.col-sm-offset-2
+										a.block(href="http://www.kjks001.com", target="_blank")
+											img(src="/front/assets/images/logo/kjks_logo.png", width="160px", alt="Huaze")
+										h4.text-master-light.text-center.light.p-l-30.p-r-30
+											| Shanghai Waltz Science & Education Culture Development Co., Ltd.
+											br
+											a(href="http://www.kjks001.com", target="_blank")
+												i.fa.fa-external-link.text-white
+								.row.m-t-50
+									.col-md-6.text-left
+										h4.text-white .Net Engineer & Server Administrator
+										p.small.hint-text.text-master-light Wholesale
+									.col-md-6.text-right
+										h5.text-white.fs-16 Shanghai
+										h5.text-white.fs-16 Oct 2010
+						//- END TESTIMONIAL
+						//- BEGIN TESTIMONIAL
+						.swiper-slide.bg-transparent
+							.container
+								.row
+									.col-sm-8.col-sm-offset-2
+										a.block(href="http://www.golden-soft.com", target="_blank")
+											img(src="/front/assets/images/logo/gdsoft_logo.png", width="160px", alt="Golden-Soft")
+										h4.text-master-light.text-center.light.p-l-30.p-r-30
+											| Hangzhou Golden-Software Systems Co., Ltd.
+											br
+											a(href="http://www.golden-soft.com", target="_blank")
+												i.fa.fa-external-link.text-white
+								.row.m-t-50
+									.col-md-6.text-left
+										h4.text-white Designer & Front-end Developer
+										p.small.hint-text.text-master-light E-Business
+									.col-md-6.text-right
+										h5.text-white.fs-16 Shanghai Dept.
+										h5.text-white.fs-16 March 2012
+						//- END TESTIMONIAL
+						//- BEGIN TESTIMONIAL
+						.swiper-slide.bg-transparent
+							.container
+								.row
+									.col-sm-8.col-sm-offset-2
+										a.block(href="http://i200.cn/index.html", target="_blank")
+											img(src="/front/assets/images/logo/i200_logo.png", width="160px", alt="i200")
+										h4.text-master-light.text-center.light.p-l-30.p-r-30
+											| Shanghai Yuanbei Technology co. ltd
+											br
+											a(href="http://i200.cn/index.html", target="_blank")
+												i.fa.fa-external-link.text-white
+								.row.m-t-50
+									.col-md-6.text-left
+										h4.text-white Full Stack Engineer & Data Analyst
+										p.small.hint-text.text-master-light Internet Technology
+									.col-md-6.text-right
+										h5.text-white.fs-16 Shanghai
+										h5.text-white.fs-16 Jun 2014 - August 2016
+						//- END TESTIMONIAL
+					//- Add Navigation
+					.swiper-button-prev.text-white
+						i.fa.fa-13
+					.swiper-button-next.text-white
+						i.fa.fa-13
+
+			//- END TESTIMONIALS
 		//- END CONTENT SECTION
 
-
 block scripts
+	script(type='text/javascript', src='/front/assets/js/portfolio.js')
 	script(type='text/javascript', src='/front/assets/plugins/text-rotate/jquery.simple-text-rotator.min.js')
 
