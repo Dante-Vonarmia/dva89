@@ -4,3 +4,4 @@ node_modules
 .DS_STore
 *.bak
 ys.*
+public/.well-known
