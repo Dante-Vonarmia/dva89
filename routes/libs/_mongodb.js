@@ -48,7 +48,7 @@ module.exports = function(app) {
 				url: '/front/assets/images/home.jpg'
 			},
 			description: 'Author: Dante Von Alcatraz',
-			addDate: new Date().now,
+			addDate: '08-03-2019',
 			pos: 1,
 			location: 'Austin, TX',
 		}).save();
