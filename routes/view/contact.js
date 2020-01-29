@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/',urlencodedParser, function(req, res) {
 	const item = {
-		addDate: new Date().now,
+		addDate: Date.now(),
 		fname: req.body.fname,
 		lname: req.body.lname,
 		mail: req.body.mail,

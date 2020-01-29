@@ -37,13 +37,14 @@ router.post('/', urlencodedParser, function(req, res) {
 
 	if (id != undefined || id != '') {
 		if (req.body.title != undefined || req.body.title != '') {
+
 			const item = {
 				title       : req.body.title,
 				onPublic    : req.body.onPublic,
 				description : req.body.description,
 				location    : req.body.location,
 				pos         : parseInt(req.body.pos),
-				addDate     : new Date().now,
+				addDate     : Date.now(),
 			}
 			const data = new m(item);
 

@@ -9,12 +9,12 @@ router.get('/', function(req, res, next) {
 	}).then(function(post) {
 		post: post.map(function(item) {
 			return {
-				title: item.title,
-				addDate: item.addDate,
-				picURL: item.picURL,
-				description: item.description,
-				location: item.location,
-				pos: item.pos,
+				title       : item.title,
+				addDate     : item.addDate,
+				picURL      : item.picURL,
+				description : item.description,
+				location    : item.location,
+				pos         : item.pos,
 			}
 		})
 		res.render('index', {
