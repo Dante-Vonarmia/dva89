@@ -7,7 +7,6 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const app          = express();
 
-// Database
 const mongoose     = require('mongoose');
 const Promise      = require('bluebird');
 const _config      = require('config-lite')(__dirname);
