@@ -5,3 +5,4 @@ node_modules
 *.bak
 ys.*
 public/.well-known
+package-lock.json
