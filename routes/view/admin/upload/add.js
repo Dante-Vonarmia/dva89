@@ -47,9 +47,9 @@ router.post('/', urlencodedParser, function(req, res) {
 				description : {
 					brief         : req.body.brief,
 					camera        : req.body.camera,
-					focal_length  : req.body.focal_length,
+					focalLength  : req.body.focalLength,
 					aperture      : req.body.aperture,
-					exposure_time : req.body.exposure_time,
+					exposureTime : req.body.exposureTime,
 					iso           : req.body.iso,
 				},
 				heroImg     : req.body.heroImg,

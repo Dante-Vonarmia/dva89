@@ -20,11 +20,11 @@ mixin tableList(item)
 		//- td.v-align-middle
 		//- 	span= item.description.camera
 		//- td.v-align-middle
-		//- 	span= item.description.focal_length
+		//- 	span= item.description.focalLength
 		//- td.v-align-middle
 		//- 	span= item.description.aperture
 		//- td.v-align-middle
-		//- 	span= item.description.exposure_time
+		//- 	span= item.description.exposureTime
 		//- td.v-align-middle
 		//- 	span= item.description.iso
 		td.v-align-middle
@@ -69,16 +69,16 @@ block content
 									input#camera.form-control(type='text', placeholder='eq: Canon PowerShot S95', name='camera')
 								
 								.form-group.form-group-default
-									label(for='focal_length') Focal_length
-									input#focal_length.form-control(type='text', placeholder='eq: 22.5mm', name='focal_length')
+									label(for='focalLength') focalLength
+									input#focalLength.form-control(type='text', placeholder='eq: 22.5mm', name='focalLength')
 							.col-sm-6
 								.form-group.form-group-default
 									label(for='aperture') Aperture
 									input#aperture.form-control(type='text', placeholder='eq: ƒ/5.6', name='aperture')
 								
 								.form-group.form-group-default
-									label(for='exposure_time') Exposure_time
-									input#exposure_time.form-control(type='text', placeholder='eq: 1/1000', name='exposure_time')
+									label(for='exposureTime') exposureTime
+									input#exposureTime.form-control(type='text', placeholder='eq: 1/1000', name='exposureTime')
 								
 								.form-group.form-group-default
 									label(for='iso') Iso

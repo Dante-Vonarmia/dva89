@@ -6,7 +6,6 @@ const photos              = require('./view/photos');
 const contact             = require('./view/contact');
 const thanks              = require('./view/thanks');
 
-
 // CMS
 const login               = require('./view/login');
 const admin               = require('./view/admin/admin');
@@ -33,32 +32,33 @@ const authorized          = require('../middlewares/authorized');
 const multipart           = require('connect-multiparty');
 const multipartMiddleware = multipart();
 
-module.exports = function(app) {
-	// Front-end
-	app.use('/', index);
-	app.use('/portfolio', portfolio);
-	app.use('/photos', photos);
-	app.use('/contact', contact);
-	app.use('/login', login);
-	app.use('/thanks', thanks);
+module.exports = function (app) {
+  // Front-end
+  'use strict';
+  app.use('/', index);
+  app.use('/portfolio', portfolio);
+  app.use('/photos', photos);
+  app.use('/contact', contact);
+  app.use('/login', login);
+  app.use('/thanks', thanks);
 
-	// Back-end
-	app.use('/admin', authorized.checkLogin, admin);
-	
-	// Banner
-	app.use('/admin/post/add', multipartMiddleware, authorized.checkLogin, addPost)
-	app.use('/admin/post/edit', multipartMiddleware, authorized.checkLogin, editPost)
-	app.use('/admin/post/del', authorized.checkLogin, delPost)
-	
-	// Upload Photo
-	app.use('/admin/upload/add', multipartMiddleware, authorized.checkLogin, addUpload)
-	app.use('/admin/upload/edit', multipartMiddleware, authorized.checkLogin, editUpload)
-	app.use('/admin/upload/del', multipartMiddleware, authorized.checkLogin, delUpload)
-	
-	// Album
-	app.use('/admin/album/add', authorized.checkLogin, addAlbum)
-	app.use('/admin/album/edit', authorized.checkLogin, editAlbum)
-	app.use('/admin/album/del', authorized.checkLogin, delAlbum)
-	
-	app.use('/admin/enquiries', authorized.checkLogin, enquiries);
-}
+  // Back-end
+  app.use('/admin', authorized.checkLogin, admin);
+
+  // Banner
+  app.use('/admin/post/add', multipartMiddleware, authorized.checkLogin, addPost);
+  app.use('/admin/post/edit', multipartMiddleware, authorized.checkLogin, editPost);
+  app.use('/admin/post/del', authorized.checkLogin, delPost);
+
+  // Upload Photo
+  app.use('/admin/upload/add', multipartMiddleware, authorized.checkLogin, addUpload);
+  app.use('/admin/upload/edit', multipartMiddleware, authorized.checkLogin, editUpload);
+  app.use('/admin/upload/del', multipartMiddleware, authorized.checkLogin, delUpload);
+
+  // Album
+  app.use('/admin/album/add', authorized.checkLogin, addAlbum);
+  app.use('/admin/album/edit', authorized.checkLogin, editAlbum);
+  app.use('/admin/album/del', authorized.checkLogin, delAlbum);
+
+  app.use('/admin/enquiries', authorized.checkLogin, enquiries);
+};

@@ -277,11 +277,11 @@
 	vertical-align: middle;
 }
 
-.icon-focal_length:before {
+.icon-focalLength:before {
 	content: '\e600';
 }
 
-.icon-exposure_time:before {
+.icon-exposureTime:before {
 	content: '\e601';
 }
 
