@@ -1,0 +1,79 @@
+extends layout
+
+block content
+	
+	//- BEGIN JUMBOTRON
+	section.jumbotron.demo-custom-height-1.full-width(data-pages-bg-image='/front/assets/images/hero_6.jpg', data-pages='parallax', data-bg-overlay='black', data-overlay-opacity='0.4')
+		.inner.full-height
+			.container-xs-height.full-height
+				.col-xs-height.col-middle.text-left
+					.container
+						.col-sm-8.col-sm-offset-2.sm-m-t-30.sm-p-t-20.sm-p-b-20
+							h1.light.text-center.text-white.xs-p-t-30.sm-p-b-30
+								| Team player & self-driven
+							h4.light.text-center.text-white.xs-p-t-30.sm-p-b-30
+								| Enthusiasm, Originality, and Visionary
+	//- END JUMBOTRON
+
+
+	//- START CONTACT SECTION
+	section.container.container-fixed-lg.p-t-60.p-b-60.sm-p-b-30.sm-m-b-30
+		.row
+			.col-md-6
+				.p-l-40.sm-p-l-0.sm-p-t-10
+					.row
+						.col-xs-12
+							h5.block-title.hint-text.m-b-0 Address in America 
+							address.m-t-10
+								| 3543 Greystone Dr.
+								br
+								|  Apt 3088
+								br
+								|  Austin TX 78731
+							br
+							p.hint-text.no-margin
+								span.fs-12.font-montserrat.bold.all-caps.p-r-10 Tel
+								span.fs-14 (334) 372-8512
+							p.hint-text.no-margin  
+								span.fs-12.font-montserrat.bold.all-caps.p-r-10 Email
+								a.fs-14.text-master(href='mailto:dantevonarmia@gmail.com') dantevonarmia@gmail.com
+							p.hint-text
+								span.fs-12.font-montserrat.bold.all-caps.p-r-10 Hours
+								span.fs-14 9:00 a.m. ~ 11:00 p.m.
+					h5.block-title.hint-text.m-b-0 Public Inquiries & Communications 
+					br
+					.row
+						.col-xs-6
+							p.fs-12.font-montserrat.bold.all-caps.no-margin.hint-text Skype 
+							p.hint-text.no-margin.fs-14 fengfan.job
+						.col-xs-6
+							p.fs-12.font-montserrat.bold.all-caps.no-margin.hint-text Wechat 
+							p.hint-text.no-margin.fs-14 Dante_Von_Armia
+			.col-md-6
+				.visible-xs.visible-sm.b-b.b-grey-light.m-t-35.m-b-30
+				.p-r-40.sm-p-r-0
+					#contact-panel.panel
+						p.semi-bold.no-margin Fill up this form to contact us if you have any futher questions
+						form#contact-form.m-t-15(role='form', autocomplete='off', method='post')
+							.row
+								.col-sm-6
+									.form-group.form-group-default.required
+										label.control-label First name
+										input.form-control(type='text', name='fname', placeholder='Dante', required='required')
+								.col-sm-6
+									.form-group.form-group-default
+										label.control-label Last name
+										input.form-control(type='text', name='lname', placeholder='Feng', required='required')
+							.form-group.form-group-default
+								label.control-label Email
+								input.form-control(type='email', name='mail', placeholder='yourmail@mailserver', required='required')
+							.form-group.form-group-default
+								label.control-label Message
+								textarea.form-control(name='message', placeholder='Type the message you wish to send(within 100 words).', style='height: 70px', required='required')
+							.sm-p-t-10.clearfix
+								p.pull-left.small.hint-text.m-t-5.font-arial I hereby certify that the information above is true and accurate. 
+								button.btn.btn-primary.font-montserrat.all-caps.fs-12.pull-right.xs-pull-left Submit
+							.clearfix
+	//- END CONTACT SECION
+
+	block scripts

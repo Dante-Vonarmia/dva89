@@ -1,0 +1,150 @@
+extends ../admin-layout
+
+mixin tableList(item)
+	tr
+		td.v-align-middle.semi-bold
+			span= item.title 
+		td.v-align-middle
+			span #{moment(item.addDate).format('MM-DD-YYYY')}
+		td.v-align-middle
+			span= item.onPublic
+		td.v-align-middle
+			span= item.description
+		td.v-align-middle
+			.row
+				button#btnFillSizeToggler.btn.btn-transparent.btn-sm(data-target='#picPreview', data-toggle='modal', data-pic-title=item.title, data-pic-url=item.picURL.url) View
+		td.v-align-middle
+			span= item.location
+		td.v-align-middle
+			span= item.pos
+		td.v-align-middle
+			a(href='/admin/post/edit/' + item.id).btn.btn-primary.btn-sm
+				i.fa.fa-edit
+		td.v-align-middle
+			a(href='/admin/post/del/' + item.id).btn.btn-danger.btn-sm
+				i.pg-trash
+block content
+	//- MODAL STICK UP
+	#addNewAppModal.modal.fade.stick-up(tabindex='-1', role='dialog', aria-labelledby='addNewAppModal', aria-hidden='true')
+		.modal-dialog
+			.modal-content
+				.modal-header.clearfix
+					button.close(type='button', data-dismiss='modal', aria-hidden='true')
+						i.pg-close.fs-14
+					h4.p-b-5
+						span.semi-bold New
+						|  Banner
+				form(role='form', enctype='multipart/form-data', autocomplete='off', method='post')
+					.modal-body
+						p.small-text Create a new Banner using this form, make sure you fill them all
+						.row
+							.col-sm-12
+								.form-group.form-group-default
+									label(for='title') title
+									input#title.form-control(type='text', placeholder='Name of your title', name='title')
+						.row
+							.col-sm-12
+								.form-group.form-group-default
+									label(for='description') Description
+									input#description.form-control(type='text', placeholder='Tell us more about it', name='description')
+						.row
+							.col-sm-12
+								.form-group.form-group-default
+									label(for='picURL') Upload Image
+									input#picURL.form_controls(type='file', placeholder='Tell us more about it', name='picURL')
+									input#picURL_cache(name='image_cache', type='hidden')
+						.row
+							.col-sm-4
+								.form-group.form-group-default
+									label(for='location') Location
+									input#location.form-control(type='text', placeholder='The place where the miracle happen', name='location')
+							.col-sm-4
+								.form-group.form-group-default
+									label(for='pos') Position
+									input#pos.autonumeric.form-control(type='text', placeholder='Please input NUMBER', name='pos')
+							.col-sm-4
+								.form-group.form-group-default
+									.checkbox.check-primary.checkbox-circle
+										input#onPublic(type='checkbox', checked='checked', name='onPublic')
+										label(for='onPublic') On Public
+					.modal-footer
+						button#add.btn.btn-primary.btn-cons(type='submit') Add
+						button.btn.btn-cons(type='button', data-dismiss='modal') Close
+			//- /.modal-content
+		//- /.modal-dialog
+	//- Modal
+	#picPreview.modal.fade.fill-in(tabindex='-1', role='dialog', aria-hidden='true')
+		button.close(type='button', data-dismiss='modal', aria-hidden='true')
+			i.pg-close
+		.modal-dialog.full-width.jumbotron.full-height
+			.modal-content.col-xs-offset-1.col-xs-10
+				.modal-header
+					h5.text-left.p-b-5
+						| Banner Name: 
+						span.semi-bold.title
+				.modal-body
+					.row
+						img.background.col-xs-12.full-height(data-bg-overlay='black', data-overlay-opacity='0.4' draggable='false')
+			//- /.modal-content
+		//- /.modal-dialog
+	//- Modal
+
+	section.p-t-30.bg-master-lightest
+		.container
+			h6.block-title.m-b-30
+				| Banner Management
+			//- START PAGE CONTENT
+			.content
+				//- START CONTAINER FLUID
+				.container-fluid.container-fixed-lg
+					//- START card
+					.panel.panel-transparent
+						.panel-header
+							.row
+								button#show-modal.btn.btn-primary.btn-cons
+									i.fa.fa-plus.m-r-5
+									|  Add
+							.clearfix
+					//- END card
+				//- END CONTAINER FLUID
+
+	section.p-b-65.p-t-15.bg-master-lightest
+		.container
+			.content
+				//- START CONTAINER FLUID
+				.container-fluid.container-fixed-lg.bg-white
+					//- START PANEL
+					.panel.panel-transparent
+						.panel-heading
+							.panel-title
+								| Table
+							.pull-right
+								.col-xs-12
+									.row
+										input.search-table.form-control.pull-right(type='text', placeholder='Search')
+							.clearfix
+						.panel-body
+							.table-responsive
+								table#postList.table.table-hover.demo-table-search.table-responsive-block
+									if context.length
+										thead
+											tr
+												th Title
+												th Date
+												th On Public
+												th Description
+												th Images
+												th Location
+												th Position
+												th Edit
+												th Delete
+										tbody
+											each item in context
+												+tableList(item)
+									else
+										tr
+											td.v-align-middle.semi-bold(colspan='9')
+												p.m-b-0 No record(s).
+					//- END PANEL
+block scripts
+	script(type='text/javascript', src='/front/assets/js/table.js')

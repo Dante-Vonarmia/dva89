@@ -1,0 +1,345 @@
+extends layout
+
+block content
+	section.jumbotron.full-height(data-pages='parallax')
+		.inner.full-height
+			//- BEGIN SLIDER
+			#hero.swiper-container
+				.swiper-wrapper
+					//- BEGIN SLIDE
+					.swiper-slide.fit.bg-info
+						//- BEGIN IMAGE PARRALAX
+						.slider-wrapper
+							.background-wrapper(data-swiper-parallax='20%')
+								//- YOUR BACKGROUND IMAGE HERE, YOU CAN ALSO USE IMG with the same classes
+								.background(data-pages-bg-image='/front/assets/images/hero_5.jpg', draggable='false')
+						//- END IMAGE PARRALAX
+						//- BEGIN CONTENT
+						.content-layer
+							.inner.full-height
+								.container-xs-height.full-height
+									.col-xs-height.col-middle.text-left
+										.container.text-center
+											h1.light.text-white(data-pages-animation='standard', data-delay='400', data-type='transition.slideDownIn')
+												| Career
+												br
+												span.fs-16.font-montserrat.text-uppercase as
+												br
+												span.font-montserrat(data-pages-init='text-rotate', data-speed='1500', data-animation='fade') Software Engineer, DevOps Engineer, Data Analyst
+
+						//- END CONTENT
+					//- END SLIDE
+				
+				//- BEGIN ANIMATED MOUSE
+				.mouse-wrapper
+					.mouse
+						.mouse-scroll
+		//- END HERO WITH PARALLAX
+
+	article.content
+		//- BEGIN CONTENT SECTION
+		section.p-b-85.p-t-75
+			.container
+				.md-p-l-20.md-p-r-20.xs-no-padding
+					h5.block-title.hint-text.no-margin Bio
+					.row
+						.col-sm-5.col-md-3.xs-p-l-15.xs-p-r-15
+							h1.m-t-5 About me
+							p.hint-text.font-montserrat.no-padding
+								| Bachelor's Degree 
+								br
+								| Fudan University, Shanghai, China. 
+							p.hint-text.font-montserrat.no-padding
+								| Master's Degree 
+								br
+								| Troy University, Alabama, US. 
+						.col-sm-7.col-md-9.no-padding.xs-p-l-15.xs-p-r-15
+							.p-t-20.p-l-35.md-p-l-5.md-p-t-15
+								p.fs-16.font-montserrat
+									| In the past ten years of coding experience, I come out my theory. Coding is consists of three fundamental dimensions:  
+									b the Object, the Attribution, the Event. 
+									| And base on this abstract concept, I achieved several projects in many fields such as ERP, Web Application, Online Payment Module, CMS, et, al.
+									br
+									| After three years of study in a master's degree, I'm pursuing to be a full-stack engineer which focus on the particular direction of Data Visualization. Meanwhile, I also equipped the necessary skills as a DevOps Engineer.
+								p.hint-text.font-arial.small-text.col-md-12.no-padding
+									| Artificial Intelligence Dept. - Computer Vision Field
+									br
+									| "A Refined Neural Image Recognition Architecture for Blurred Picture Caption Generation"
+									br
+									| "Rethink In Blurred Image Detection And Recognition Base On Fine-tuned Edge Supervised Learning"
+		//- END CONTENT SECTION
+		//- BEGIN CONTENT SECTION
+		section.bg-master-lightest.p-b-85.p-t-75.p-b-65.p-t-55
+			.container.text-center
+				.row
+					.col-sm-8.col-sm-offset-2
+						h5.block-title.hint-text.no-margin Career
+						h1.m-t-5.light
+							| Qualified Job Titles
+			.container(role='tablist')
+				.md-p-l-20.xs-no-padding.clearfix
+					.col-sm-4.no-padding
+						#one-tab.padding-15(data-toggle='tab', href='#one', aria-controls='one' aria-selected='true')
+							h1
+								i.bold.text-primary.fa.fa-code.large.cursor
+							a.block.block-title.p-b-5.text-primary(href="javascript:void(0);")
+								| software engineer 
+								i.fa.fa-link
+							p
+								| Socket; NodeJS; Design Pattern; RESTful API; AMD/CMD; MVC/MVVM; Functional Programming;
+							p.hint-text.muted.font-arial.small-text.col-sm-9.no-padding
+								| Sublime Text 3; Visual Studio Code; Robomongo; Xcode
+						.visible-xs.b-b.b-grey-light.m-t-30.m-b-30
+					.col-sm-4.no-padding
+						#two-tab.padding-15(data-toggle='tab', href='#two' aria-controls='two' aria-selected='false')
+							h1
+								i.bold.text-primary.fa.fa-terminal.cursor
+							a.block.block-title.p-b-5.text-primary(href="javascript:void(0);")
+								| devops engineer 
+								i.fa.fa-link
+							p
+								| Server Administration; Git Control; SSL/SSH; HTTP/HTTPS; VIM; Terminal CLI; DNS; Unit Test; 
+							p.hint-text.muted.font-arial.small-text.col-sm-9.no-padding
+								| iTerm; DigtalOcean; GitHub; Docker; Jupyter Notebook; Cloudinary; Heroku
+						.visible-xs.b-b.b-grey-light.m-t-30.m-b-30
+					.col-sm-4.no-padding
+						#three-tab.padding-15(data-toggle='tab', href='#three' aria-controls='three' aria-selected='false')
+							h1
+								i.bold.text-primary.fa.fa-bar-chart.cursor
+							a.block.block-title.p-b-5.text-primary(href="javascript:void(0);")
+								| data analyst 
+								i.fa.fa-link
+							p
+								| Practical Statistics; Data Visualization; Data Mining; Computer Vision; Fourier Transform;
+							p.hint-text.muted.font-arial.small-text.col-sm-9.no-padding
+								| MATLAB; LaTeX; Tensorflow; NumPy; Scikit; Theano; Keras
+		//- END CONTENT SECTION
+		//- BEGIN CONTENT SECTION
+		section.p-b-85.p-t-75.p-b-65.p-t-55
+			.container
+				.tab-content.padding-15
+					#one.tab-pane.fade.in.active(role='tabpanel', aria-labelledby='one-tab') 
+						.md-p-l-20.md-p-r-20.xs-no-padding
+							.row
+								.col-sm-6.b-r.b-grey.xs-b-b.b-grey
+									h5.block-title.hint-text.no-margin 7+ years
+									h2.m-t-5 Software Engineer
+									.col-sm-10.no-padding
+										ul.no-padding
+											li.font-montserrat.text-master.fs-14.m-b-10 Wrote and updated documentation to outline the technical design of the entire project. 
+											li.font-montserrat.text-master.fs-14.m-b-10 Researched and identified new technologies and tools that would help to grow the agile development environment. 
+											li.font-montserrat.text-master.fs-14.m-b-10 Built application platform foundation to support migration from client-server product lines to enterprise architectures and services. 
+								.col-sm-6.xs-p-t-30
+									.xs-m-t-15.p-l-30.xs-no-padding
+										.row
+											.col-sm-6
+												.progress.progress-small.transparent-primary.m-t-15
+													.progress-bar.progress-bar-primary(role='progressbar', aria-valuemin='0', aria-valuemax='100', data-pages-animate='progressbar', data-percentage='85%')
+												h3.font-montserrat.no-margin.text-primary.no-margin.lh-large
+													span(data-pages-animate='number', data-value='85', data-animation-duration='500') 0
+													|  %
+												p.font-montserrat.text-primary
+													| JavaScript ES6
+											.col-sm-6
+												.progress.progress-small.transparent-primary.m-t-15
+													.progress-bar.progress-bar-primary(role='progressbar', aria-valuemin='0', aria-valuemax='100', data-pages-animate='progressbar', data-percentage='75%')
+												h3.font-montserrat.no-margin.text-primary.no-margin.lh-large
+													span(data-pages-animate='number', data-value='75', data-animation-duration='500') 0
+													|  %
+												p.font-montserrat.text-primary
+													| Python 3
+											.col-sm-6
+												.progress.progress-small.transparent-primary.m-t-15
+													.progress-bar.progress-bar-primary(role='progressbar', aria-valuemin='0', aria-valuemax='100', data-pages-animate='progressbar', data-percentage='80%')
+												h3.font-montserrat.no-margin.text-primary.no-margin.lh-large
+													span(data-pages-animate='number', data-value='80', data-animation-duration='500') 0
+													|  %
+												p.font-montserrat.text-primary
+													| Unix C/C++
+											.col-sm-6
+												.progress.progress-small.transparent-primary.m-t-15
+													.progress-bar.progress-bar-primary(role='progressbar', aria-valuemin='0', aria-valuemax='100', data-pages-animate='progressbar', data-percentage='90%')
+												h3.font-montserrat.no-margin.text-primary.no-margin.lh-large
+													span(data-pages-animate='number', data-value='60', data-animation-duration='500') 0
+													|  %
+												p.font-montserrat.text-primary
+													| SQL/NoSQL
+
+					#two.tab-pane.fade(role='tabpanel', aria-labelledby='two-tab')
+						.md-p-l-20.md-p-r-20.xs-no-padding
+							.row
+								.col-sm-6.b-r.b-grey.xs-b-b.b-grey
+									h5.block-title.hint-text.no-margin 3+ years
+									h2.m-t-5 DevOps Engineer
+									.col-sm-10.no-padding
+										ul.no-padding
+											li.font-montserrat.text-master.fs-14.m-b-10 Monitored network performance and provided network performance statistical reports for both real-time and historical measurements.
+											li.font-montserrat.text-master.fs-14.m-b-10 Collaborated closely with product development teams and other stakeholders, using effective communication and active listening skills.
+											li.font-montserrat.text-master.fs-14.m-b-10 Trained junior members of IT team regarding network security and troubleshooting of data circuits.
+								.col-sm-6.xs-p-t-30
+									.xs-m-t-15.p-l-30.xs-no-padding
+										.row
+											.col-sm-6
+												.progress.progress-small.transparent-primary.m-t-15
+													.progress-bar.progress-bar-primary(style='width: 75%')
+												h3.font-montserrat.no-margin.text-primary.no-margin.lh-large
+													span 75
+													|  %
+												p.font-montserrat.text-primary
+													| Nginx
+											.col-sm-6
+												.progress.progress-small.transparent-primary.m-t-15
+													.progress-bar.progress-bar-primary(style='width: 85%')
+												h3.font-montserrat.no-margin.text-primary.no-margin.lh-large
+													span 85
+													|  %
+												p.font-montserrat.text-primary
+													| Bash Scripting 
+											.col-sm-6
+												.progress.progress-small.transparent-primary.m-t-15
+													.progress-bar.progress-bar-primary(style='width: 45%')
+												h3.font-montserrat.no-margin.text-primary.no-margin.lh-large
+													span 45
+													|  %
+												p.font-montserrat.text-primary
+													| Docker
+											.col-sm-6
+												.progress.progress-small.transparent-primary.m-t-15
+													.progress-bar.progress-bar-primary(style='width: 90%')
+												h3.font-montserrat.no-margin.text-primary.no-margin.lh-large
+													span 90
+													|  %
+												p.font-montserrat.text-primary
+													| CLI
+					#three.tab-pane.fade(role='tabpanel', aria-labelledby='three-tab')
+						.md-p-l-20.md-p-r-20.xs-no-padding
+							.row
+								.col-sm-6.b-r.b-grey.xs-b-b.b-grey
+									h5.block-title.hint-text.no-margin 2+ years
+									h2.m-t-5 Data Analyst
+									.col-sm-10.no-padding
+										ul.no-padding
+											li.font-montserrat.text-master.fs-14.m-b-10 Developed data architecture design to enable analysts to perform targeted customer analysis.
+											li.font-montserrat.text-master.fs-14.m-b-10 Designed strategic plan for component development practices to support future projects.
+											li.font-montserrat.text-master.fs-14.m-b-10 Aligned office departments and increased inter-department communication and data sharing.
+								.col-sm-6.xs-p-t-30
+									.xs-m-t-15.p-l-30.xs-no-padding
+										.row
+											.col-sm-6
+												.progress.progress-small.transparent-primary.m-t-15
+													.progress-bar.progress-bar-primary(style='width: 90%')
+												h3.font-montserrat.no-margin.text-primary.no-margin.lh-large
+													span 90
+													|  %
+												p.font-montserrat.text-primary
+													| Python
+											.col-sm-6
+												.progress.progress-small.transparent-primary.m-t-15
+													.progress-bar.progress-bar-primary(style='width: 65%')
+												h3.font-montserrat.no-margin.text-primary.no-margin.lh-large
+													span 65
+													|  %
+												p.font-montserrat.text-primary
+													| R
+											.col-sm-6
+												.progress.progress-small.transparent-primary.m-t-15
+													.progress-bar.progress-bar-primary(style='width: 85%')
+												h3.font-montserrat.no-margin.text-primary.no-margin.lh-large
+													span 85
+													|  %
+												p.font-montserrat.text-primary
+													| Statistics
+											.col-sm-6
+												.progress.progress-small.transparent-primary.m-t-15
+													.progress-bar.progress-bar-primary(style='width: 80%')
+												h3.font-montserrat.no-margin.text-primary.no-margin.lh-large
+													span 80
+													|  %
+												p.font-montserrat.text-primary
+													| Deep Learning
+		//- START CONTENT SECTION
+		section#demo-testimonial-1.p-b-50.p-t-50.bg-master-light(data-pages-bg-image="/front/assets/images/hero_5.jpg", data-pages="parallax", data-bg-overlay="dark", data-overlay-opacity="0.1")
+			.text-center
+				h1.text-master-light
+					i.fa.fa-quote-left
+				h6.text-master-light.font-montserrat.text-uppercase.fs-15.text-center 
+					| Products | Achievements
+			//- BEGIN TESTIMONIALS SLIDER
+			.container
+				.swiper-container.m-t-60
+					.swiper-wrapper
+						//- BEGIN TESTIMONIAL
+						.swiper-slide.bg-transparent
+							.container
+								.row
+									.col-sm-8.col-sm-offset-2
+										a.block(href="http://www.kjks001.com", target="_blank")
+											img(src="/front/assets/images/logo/kjks_logo.png", width="160px", alt="Huaze")
+										h4.text-master-light.text-center.light.p-l-30.p-r-30
+											| Shanghai Waltz Science & Education Culture Development Co., Ltd.
+											br
+											a(href="http://www.kjks001.com", target="_blank")
+												i.fa.fa-external-link.text-white.m-t-20
+								.row.m-t-50
+									.col-xs-6.text-left
+										h4.text-white .Net Engineer & Server Administrator
+										p.small.hint-text.text-master-light Wholesale
+									.col-xs-6.text-right
+										h5.text-white.fs-16 Shanghai
+										h5.text-white.fs-16 Oct 2010
+						//- END TESTIMONIAL
+						//- BEGIN TESTIMONIAL
+						.swiper-slide.bg-transparent
+							.container
+								.row
+									.col-sm-8.col-sm-offset-2
+										a.block(href="http://www.golden-soft.com", target="_blank")
+											img(src="/front/assets/images/logo/gdsoft_logo.png", width="160px", alt="Golden-Soft")
+										h4.text-master-light.text-center.light.p-l-30.p-r-30
+											| Hangzhou Golden-Software Systems Co., Ltd.
+											br
+											a(href="http://www.golden-soft.com", target="_blank")
+												i.fa.fa-external-link.text-white.m-t-20
+								.row.m-t-50
+									.col-xs-6.text-left
+										h4.text-white Designer & Front-end Developer
+										p.small.hint-text.text-master-light E-Business
+									.col-xs-6.text-right
+										h5.text-white.fs-16 Shanghai Dept.
+										h5.text-white.fs-16 March 2012
+						//- END TESTIMONIAL
+						//- BEGIN TESTIMONIAL
+						.swiper-slide.bg-transparent
+							.container
+								.row
+									.col-sm-8.col-sm-offset-2
+										a.block(href="http://i200.cn/index.html", target="_blank")
+											img(src="/front/assets/images/logo/i200_logo.png", width="160px", alt="i200")
+										h4.text-master-light.text-center.light.p-l-30.p-r-30
+											| Shanghai Yuanbei Technology co. ltd
+											br
+											a(href="http://i200.cn/index.html", target="_blank")
+												i.fa.fa-external-link.text-white.m-t-20
+								.row.m-t-50
+									.col-xs-6.text-left
+										h4.text-white Full Stack Engineer & Data Analyst
+										p.small.hint-text.text-master-light Internet Technology
+									.col-xs-6.text-right
+										h5.text-white.fs-16 Shanghai
+										h5.text-white.fs-16 Dec 2015
+						//- END TESTIMONIAL
+					//- Add Navigation
+					.swiper-button-prev.text-white
+						i.fa.fa-13
+					.swiper-button-next.text-white
+						i.fa.fa-13
+
+			//- END TESTIMONIALS
+		//- END CONTENT SECTION
+
+block scripts
+	script(type='text/javascript', src='/front/assets/plugins/text-rotate/jquery.simple-text-rotator.min.js')
+	script(type='text/javascript', src='/front/assets/plugins/jquery-appear/jquery.appear.js')
+	script(type='text/javascript', src='/front/assets/plugins/animateNumber/jquery.animateNumbers.js')
+	script(type='text/javascript', src='/front/assets/js/portfolio.js')
+

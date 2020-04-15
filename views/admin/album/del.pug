@@ -1,0 +1,40 @@
+extends ../admin-layout
+
+block content
+	//- BEGIN BREADCRUMb
+	section.bg-master-lightest.p-t-15
+		.container
+			.row
+				ol.breadcrumb.m-b-0.bg-master-lightest
+					li.breadcrumb-item
+						a(href='/admin/album/add').semi-bold.text-primary 
+							i.pg-arrow_left_line_alt.m-r-5
+							| Back
+	section.p-t-15.p-b-65.bg-master-lightest
+		.container
+			//- START PAGE CONTENT
+			.content
+				//- START CONTAINER FLUID
+				.container-fluid.container-fixed-lg.bg-white
+					//- START PANEL
+					.panel.panel-transparent
+						.panel-heading
+							.panel-title
+								| Delete album
+							.clearfix
+						.panel-body
+							//- START FORM
+							form(role='form', autocomplete='off', method='post')
+								.row.p-t-30
+									.col-md-8.col-sm-6
+										.row
+											.col-sm-12
+												.form-group.form-group-default
+													if context.length
+														label.control-label 
+															| Album Name
+														input.form-control.input-sm.text-master(type='text', name='title', value=context[0].title, disabled)
+									.col-md-2.col-sm-3
+										button.btn.btn-danger.btn-lg.col-xs-12 
+											| Delete
+					//- END PANEL

@@ -1,0 +1,67 @@
+doctype html
+html
+	head
+		meta(http-equiv='content-type', content='text/html;charset=UTF-8')
+		meta(charset='utf-8')
+		title Pages - Front End
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+		link(rel='apple-touch-icon', href='/front/pages/ico/60.png')
+		link(rel='apple-touch-icon', sizes='76x76', href='/front/pages/ico/76.png')
+		link(rel='apple-touch-icon', sizes='120x120', href='/front/pages/ico/120.png')
+		link(rel='apple-touch-icon', sizes='152x152', href='/front/pages/ico/152.png')
+		link(rel='icon', type='image/x-icon', href='favicon.ico')
+		meta(name='apple-mobile-web-app-capable', content='yes')
+		meta(name='apple-touch-fullscreen', content='yes')
+		meta(name='apple-mobile-web-app-status-bar-style', content='default')
+		meta(content='', name='description')
+		meta(content='', name='author')
+		//- BEGIN PLUGINS
+		link(href='/front/assets/plugins/pace/pace-theme-flash.css', rel='stylesheet', type='text/css')
+		link(href='/front/assets/plugins/bootstrap/css/bootstrap.min.css', rel='stylesheet', type='text/css')
+		link(href='/front/assets/plugins/font-awesome/css/font-awesome.css', rel='stylesheet', type='text/css')
+		link(href='/front/assets/plugins/swiper/css/swiper.css', rel='stylesheet', type='text/css', media='screen')
+		//- END PLUGINS
+		//- BEGIN PAGES CSS
+		link.main-stylesheet(href='/front/pages/css/pages.css', rel='stylesheet', type='text/css')
+		link.main-stylesheet(href='/front/pages/css/pages-icons.css', rel='stylesheet', type='text/css')
+		//- BEGIN PAGES CSS
+	body.pace-success
+		//- BEGIN JUMBOTRON
+		section.jumbotron.last.full-height.xs-full-height.z-index-10(data-pages='parallax', data-pages-bg-image='/front/assets/images/Admin-Hero.jpg')
+			.container-xs-height.full-height.inner
+				.col-xs-height.col-middle.text-left
+					//- START CONTENT
+					.container
+						.row
+							.col-sm-10.col-sm-offset-1
+								.text-center.sm-p-t-30
+									//- img.m-b-30(src='/front/assets/images/logo-header.png', width='152', height='21', data-src-retina='/front/assets/images/logo_black_2x.png', alt='')
+									h1.font-montserrat.text-uppercase.hidden-xs Login Verification
+									h2.font-montserrat.text-uppercase.visible-xs Login Verification
+									h4 Sign up for your own CMS
+						.row
+							.col-md-8.col-md-offset-2
+								.row
+									form.m-t-40.m-b-5.clearfix(action='/login', method='post')
+										.col-sm-5.p-r-5.sm-p-r-15
+											.form-group.form-group-default.col-sm-12
+												label.control-label Identification
+												input.form-control(type='text', name='username', placeholder='')
+										.col-sm-7.p-l-10.sm-p-l-15
+											.form-group.form-group-default.input-group.input-group-attached.col-xs-12
+												label.control-label Password
+												input.form-control(type='password', name='password', placeholder='')
+												span.input-group-btn
+													button.btn.btn-danger.btn-cons(type='submit') Access
+											//- p.fs-12.pull-right.text-right.m-r-20 Be first to find out when we Launch our product.
+					//- END CONTENT
+		//- END JUMBOTRON
+		//- BEGIN VENDOR JS
+		script(src='/front/assets/plugins/pace/pace.min.js', type='text/javascript')
+		script(type='text/javascript', src='/front/assets/plugins/jquery/jquery-1.11.1.min.js')
+		script(type='text/javascript', src='/front/assets/plugins/bootstrap/js/bootstrap.min.js')
+		//- END VENDOR JS
+		//- BEGIN PAGES FRONTEND LIB
+		script(type='text/javascript', src='/front/pages/js/pages.frontend.js')
+		//- END PAGES LIB
+

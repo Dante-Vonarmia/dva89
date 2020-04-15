@@ -1,0 +1,53 @@
+extends ../admin-layout
+
+block content
+	//- BEGIN BREADCRUMb
+	section.bg-master-lightest.p-t-15
+		.container
+			.row
+				ol.breadcrumb.m-b-0.bg-master-lightest
+					li.breadcrumb-item
+						a(href='/admin/album/add').semi-bold.text-primary 
+							i.pg-arrow_left_line_alt.m-r-5
+							| Back
+	section.p-t-15.p-b-65.bg-master-lightest
+		.container
+			//- START PAGE CONTENT
+			.content
+				//- START CONTAINER FLUID
+				.container-fluid.container-fixed-lg.bg-white
+					//- START PANEL
+					.panel.panel-transparent
+						.panel-heading
+							.panel-title
+								| Edit album
+							.clearfix
+						.panel-body
+							//- START FORM
+							form(role='form', autocomplete='off', method='post')
+								.row.p-t-30
+									.col-md-8.col-sm-6
+										if context.length
+											.row
+												.col-sm-12
+													.form-group.form-group-default
+															label.control-label 
+																| Album Name
+															input.form-control.input-sm(type='text', name='title', value=context[0].title)
+											.row
+												.col-sm-12
+													.form-group.form-group-default
+														label.control-label 
+															| Choose Catalog
+														select(name='catalog')
+															- var items = ['character','night','objects','portraits','landscapes','sports','others'];
+															each item in items
+																if (context[0].catalog === item)
+																	option(value=context[0].catalog, selected)= context[0].catalog
+																else 
+																	option(value=item)= item
+											.row
+												.col-md-2.col-sm-3
+													button.btn.btn-primary.btn-lg
+														| Update
+					//- END PANEL

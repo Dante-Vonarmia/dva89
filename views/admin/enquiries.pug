@@ -1,0 +1,74 @@
+extends admin-layout
+
+mixin tableList(item)
+	tr
+		td.v-align-middle.semi-bold
+			span= item.fname 
+		td.v-align-middle
+			span= item.lname 
+		td.v-align-middle
+			span= item.mail
+		td.v-align-middle
+			span #{moment(item.addDate).format('MM-DD-YYYY')}
+		td.v-align-middle
+			span= item.content
+
+block content
+	section.p-b-65.p-t-30.bg-master-lightest
+		.container
+			h6.block-title.m-b-30
+				| Enquiries List
+			//- START PAGE CONTENT
+			.content
+				//- START CONTAINER FLUID
+				.container-fluid.container-fixed-lg.bg-white
+					//- START PANEL
+					.panel.panel-transparent
+						.panel-heading
+							.panel-title
+								| Incoming messages box
+							.pull-right
+								.col-xs-12
+									input.search-table.form-control.pull-right(type='text', placeholder='Search')
+							.clearfix
+						.panel-body
+							table#enquiriesList.table.table-hover.demo-table-search.table-responsive-block
+								thead
+									tr
+										th First Name
+										th Last Name
+										th Email
+										th Date
+										th Message
+								tbody
+									if context.length
+										each item in context
+											+tableList(item)
+									else
+										tr
+											td.v-align-middle.semi-bold(colspan='5')
+												p No record(s).
+
+			//- END PANEL
+
+block scripts
+	script.
+		$(function() {
+			var table = $('#enquiriesList');
+			var settings = {
+				"sDom": "<'table-responsive't><'row'<p i>>",
+				"sPaginationType": "bootstrap",
+				"destroy": true,
+				"scrollCollapse": true,
+				"oLanguage": {
+					"sLengthMenu": "_MENU_ ",
+					"sInfo": "Showing <b>_START_ to _END_</b> of _TOTAL_ entries"
+				},
+				"iDisplayLength": 5
+			};
+			table.dataTable(settings);
+			// search box for table
+			$('.search-table').keyup(function() {
+				table.fnFilter($(this).val());
+			});
+		});
