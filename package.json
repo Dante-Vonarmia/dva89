@@ -38,7 +38,7 @@
     "jquery-file-upload-middleware": "^0.1.8",
     "less-middleware": "~2.2.0",
     "moment": "^2.18.1",
-    "mongoose": "^4.13.10",
+    "mongoose": "^5.7.5",
     "morgan": "^1.9.1",
     "nodemailer": "^4.0.1",
     "normalize.css": "^7.0.0",
